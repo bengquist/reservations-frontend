@@ -1,12 +1,19 @@
-import styled from "styled-components";
+import { css } from "styled-components";
+import { ComponentPropsWithoutRef } from "react";
 
-function Button(props) {
-  return <Container {...props}>{props.children}</Container>;
-}
+const Button: React.FunctionComponent<
+  ComponentPropsWithoutRef<"button">
+> = props => {
+  return (
+    <button css={buttonStyle} {...props}>
+      {props.children}
+    </button>
+  );
+};
 
 export default Button;
 
-const Container = styled.button`
+export const buttonStyle = css`
   background: ${props => props.theme.colors.accent};
   color: white;
   padding: 0.5rem 2rem;
@@ -19,6 +26,7 @@ const Container = styled.button`
     opacity: 0.7;
   }
   :focus {
-    opacity: 0.6;
+    background: black;
+    opacity: 0.5;
   }
 `;

@@ -1,12 +1,17 @@
 import styled from "styled-components";
+import { ReactNode } from "react";
 
-function Header() {
+type Props = {
+  children: ReactNode;
+};
+
+const Header: React.FunctionComponent<Props> = ({ children }) => {
   return (
     <Container>
-      <h1>Reservations</h1>
+      <h1>{children}</h1>
     </Container>
   );
-}
+};
 
 export default Header;
 

@@ -57,6 +57,10 @@ export const GlobalStyle = createGlobalStyle`
       outline: none;
     }
   }
+  input {
+    border: none;
+    box-shadow: 0 0 0 1pt rgb(0, 0, 0, 0.3);
+  }
   /* Links */
   a {
     text-decoration: none;

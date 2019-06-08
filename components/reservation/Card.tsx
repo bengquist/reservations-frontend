@@ -1,6 +1,6 @@
 import { Reservation } from "./types";
-import styled from "styled-components";
-import { hoverState } from "../styles/helpers";
+import styled, { css } from "styled-components";
+import { hoverState, focusState } from "../styles/helpers";
 
 type Props = {
   reservation: Reservation;
@@ -8,7 +8,7 @@ type Props = {
 
 const Card: React.FunctionComponent<Props> = ({ reservation }) => {
   return (
-    <button style={{ width: "100%" }}>
+    <button css={buttonStyle}>
       <Container>
         <span>{reservation.name}</span>
         <span>{reservation.hotelName}</span>
@@ -21,11 +21,16 @@ const Card: React.FunctionComponent<Props> = ({ reservation }) => {
 
 export default Card;
 
-const Container = styled.div`
+const buttonStyle = css`
+  width: 100%;
+  background: white;
   ${hoverState};
+  ${focusState};
+`;
+
+const Container = styled.div`
   display: grid;
   grid-template-columns: 1.25fr 1.25fr 0.75fr 0.75fr;
-  background: white;
   text-align: left;
 
   > span {

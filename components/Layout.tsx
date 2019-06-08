@@ -1,14 +1,17 @@
 import Head from "next/head";
 import styled from "styled-components";
 import Header from "./Header";
+import { ReactNode } from "react";
 
 type Props = {
   title?: string;
+  options?: ReactNode;
 };
 
 const Layout: React.FunctionComponent<Props> = ({
   children,
-  title = "This is the default title"
+  title = "Reservations",
+  options
 }) => (
   <Container>
     <Head>
@@ -16,8 +19,11 @@ const Layout: React.FunctionComponent<Props> = ({
       <meta charSet="utf-8" />
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
     </Head>
-    <Header />
-    <div className="children-container">{children}</div>
+    <Header>{title}</Header>
+    <div className="children-container">
+      <OptionsContainer>{options}</OptionsContainer>
+      {children}
+    </div>
   </Container>
 );
 
@@ -37,4 +43,9 @@ const Container = styled.div`
     display: grid;
     grid-gap: 10px;
   }
+`;
+
+const OptionsContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
 `;

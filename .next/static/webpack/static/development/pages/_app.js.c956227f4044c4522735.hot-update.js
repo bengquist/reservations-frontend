@@ -1,26 +1,5 @@
 webpackHotUpdate("static\\development\\pages\\_app.js",{
 
-/***/ "./node_modules/@babel/runtime-corejs2/core-js/object/define-properties.js":
-false,
-
-/***/ "./node_modules/@babel/runtime-corejs2/core-js/object/freeze.js":
-false,
-
-/***/ "./node_modules/@babel/runtime-corejs2/helpers/esm/taggedTemplateLiteral.js":
-false,
-
-/***/ "./node_modules/core-js/library/fn/object/define-properties.js":
-false,
-
-/***/ "./node_modules/core-js/library/fn/object/freeze.js":
-false,
-
-/***/ "./node_modules/core-js/library/modules/es6.object.define-properties.js":
-false,
-
-/***/ "./node_modules/core-js/library/modules/es6.object.freeze.js":
-false,
-
 /***/ "./pages/_app.tsx":
 /*!************************!*\
   !*** ./pages/_app.tsx ***!
@@ -30,7 +9,6 @@ false,
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return MyApp; });
 /* harmony import */ var _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/regenerator */ "./node_modules/@babel/runtime-corejs2/regenerator/index.js");
 /* harmony import */ var _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _babel_runtime_corejs2_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/asyncToGenerator */ "./node_modules/@babel/runtime-corejs2/helpers/esm/asyncToGenerator.js");
@@ -46,6 +24,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_app__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(next_app__WEBPACK_IMPORTED_MODULE_9__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
 /* harmony import */ var _components_styles_theme__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../components/styles/theme */ "./components/styles/theme.ts");
+/* harmony import */ var _components_styles_global__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../components/styles/global */ "./components/styles/global.ts");
+/* harmony import */ var react_apollo__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! react-apollo */ "./node_modules/react-apollo/react-apollo.esm.js");
+/* harmony import */ var _lib_withApollo__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../lib/withApollo */ "./lib/withApollo.ts");
 
 
 
@@ -55,6 +36,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var _jsxFileName = "C:\\Users\\engqu\\Desktop\\projects\\Personal\\reservations-client\\pages\\_app.tsx";
+
+
+
 
 
 
@@ -76,30 +60,38 @@ function (_App) {
     value: function render() {
       var _this$props = this.props,
           Component = _this$props.Component,
-          pageProps = _this$props.pageProps;
+          pageProps = _this$props.pageProps,
+          apolloClient = _this$props.apolloClient;
       return react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(next_app__WEBPACK_IMPORTED_MODULE_9__["Container"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 19
+          lineNumber: 23
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(styled_components__WEBPACK_IMPORTED_MODULE_10__["ThemeProvider"], {
         theme: _components_styles_theme__WEBPACK_IMPORTED_MODULE_11__["theme"],
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 20
+          lineNumber: 24
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_8___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(GlobalStyle, {
+      }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(react_apollo__WEBPACK_IMPORTED_MODULE_13__["ApolloProvider"], {
+        client: apolloClient,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 22
+          lineNumber: 25
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_components_styles_global__WEBPACK_IMPORTED_MODULE_12__["GlobalStyle"], {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 26
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(Component, Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_2__["default"])({}, pageProps, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 23
+          lineNumber: 27
         },
         __self: this
       })))));
@@ -153,9 +145,9 @@ function (_App) {
   return MyApp;
 }(next_app__WEBPACK_IMPORTED_MODULE_9___default.a);
 
-
+/* harmony default export */ __webpack_exports__["default"] = (Object(_lib_withApollo__WEBPACK_IMPORTED_MODULE_14__["default"])(MyApp));
 
 /***/ })
 
 })
-//# sourceMappingURL=_app.js.478aafa0b76f6bbefc93.hot-update.js.map
+//# sourceMappingURL=_app.js.c956227f4044c4522735.hot-update.js.map

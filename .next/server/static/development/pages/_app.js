@@ -109,7 +109,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function _templateObject() {
-  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  html {\n    font-size: 10px;\n  }\n  body {\n    font-size: 1.6rem;\n  }\n  :root {\n    --step-up-5: 2em;\n    --step-up-4: 1.7511em;\n    --step-up-3: 1.5157em;\n    --step-up-2: 1.3195em;\n    --step-up-1: 1.1487em;\n    /* baseline: 1em */\n    --step-down-1: 0.8706em;\n    --step-down-2: 0.7579em;\n    --step-down-3: 0.6599em;\n    --step-down-4: 0.5745em;\n    --step-down-5: 0.5em;\n    /* Colors */\n    --header: rgb(0,0,0);\n  }\n  @font-face {\n    font-family: system;\n    font-style: normal;\n    font-weight: 300;\n    src: local(\".SFNSText-Light\"), local(\".HelveticaNeueDeskInterface-Light\"), local(\".LucidaGrandeUI\"), local(\"Ubuntu Light\"), local(\"Segoe UI Light\"), local(\"Roboto-Light\"), local(\"DroidSans\"), local(\"Tahoma\");\n  }\n  body, h1, h2, h3, h4, h5, h6, p, ol, ul, input[type=text], input[type=email], button {\n    margin: 0;\n    padding: 0;\n    font-weight: normal;\n  }\n  body, h1, h2, h3, h4, h5, h6, p, ol, ul, input[type=text], input[type=email], button {\n    font-family: \"system\"\n  }\n  *, *:before, *:after {\n    box-sizing: inherit;\n  }\n  ol, ul {\n    list-style: none;\n  }\n  img {\n    max-width: 100%;\n    height: auto;\n  }\n  /* Links */\n  a {\n    text-decoration: none;\n    color: inherit;\n  &.active {\n      text-decoration: none;\n    }\n  }\n"]);
+  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  html {\n    font-size: 10px;\n    background: rgba(247, 247, 247, 1);\n  }\n  body {\n    font-size: 1.6rem;\n  }\n  :root {\n    --step-up-5: 2em;\n    --step-up-4: 1.7511em;\n    --step-up-3: 1.5157em;\n    --step-up-2: 1.3195em;\n    --step-up-1: 1.1487em;\n    /* baseline: 1em */\n    --step-down-1: 0.8706em;\n    --step-down-2: 0.7579em;\n    --step-down-3: 0.6599em;\n    --step-down-4: 0.5745em;\n    --step-down-5: 0.5em;\n    /* Colors */\n    --header: rgb(0,0,0);\n  }\n  @font-face {\n    font-family: system;\n    font-style: normal;\n    font-weight: 300;\n    src: local(\".SFNSText-Light\"), local(\".HelveticaNeueDeskInterface-Light\"), local(\".LucidaGrandeUI\"), local(\"Ubuntu Light\"), local(\"Segoe UI Light\"), local(\"Roboto-Light\"), local(\"DroidSans\"), local(\"Tahoma\");\n  }\n  body, h1, h2, h3, h4, h5, h6, p, ol, ul, input[type=text], input[type=email], button {\n    margin: 0;\n    padding: 0;\n    font-weight: normal;\n  }\n  body, h1, h2, h3, h4, h5, h6, p, ol, ul, input[type=text], input[type=email], button {\n    font-family: \"system\"\n  }\n  *, *:before, *:after {\n    box-sizing: inherit;\n  }\n  ol, ul {\n    list-style: none;\n  }\n  img {\n    max-width: 100%;\n    height: auto;\n  }\n  button {\n    background: none;\n    border: none;\n    :hover {\n      cursor: pointer;\n    }\n    :focus {\n      outline: none;\n    }\n  }\n  /* Links */\n  a {\n    text-decoration: none;\n    color: inherit;\n  &.active {\n      text-decoration: none;\n    }\n  }\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -138,7 +138,11 @@ var theme = {
     primary: "#DAF2FC",
     secondary: "#009CDE",
     accent: "#104C97",
-    gray: "#E8E8E8"
+    gray: "#E8E8E8",
+    white: "#fff"
+  },
+  shadows: {
+    soft: "0px 3px 6px rgba(0, 0, 0, 0.15)"
   }
 };
 
@@ -163,17 +167,12 @@ __webpack_require__.r(__webpack_exports__);
 var apolloClient = null;
 
 function create(initialState) {
-  // Check out https://github.com/zeit/next.js/pull/4611 if you want to use the AWSAppSyncClient
   return new apollo_boost__WEBPACK_IMPORTED_MODULE_0__["ApolloClient"]({
     connectToDevTools: false,
     ssrMode: !false,
-    // Disables forceFetch on the server (so queries are only run once)
     link: new apollo_boost__WEBPACK_IMPORTED_MODULE_0__["HttpLink"]({
-      uri: "https://api.graph.cool/simple/v1/cixmkt2ul01q00122mksg82pn",
-      // Server URL (must be absolute)
+      uri: "http://localhost:4000/graphql",
       credentials: "same-origin",
-      // Additional fetch() options like `credentials` or `headers`
-      // Use fetch() polyfill on the server
       fetch:  true && isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_1___default.a
     }),
     cache: new apollo_boost__WEBPACK_IMPORTED_MODULE_0__["InMemoryCache"]().restore(initialState || {})
@@ -181,12 +180,9 @@ function create(initialState) {
 }
 
 function initApollo(initialState) {
-  // Make sure to create a new client for every server-side request so that data
-  // isn't shared between connections (which would be bad)
   if (true) {
     return create(initialState);
-  } // Reuse client on the client-side
-
+  }
 
   if (!apolloClient) {
     apolloClient = create(initialState);
@@ -273,8 +269,6 @@ var _jsxFileName = "C:\\Users\\engqu\\Desktop\\projects\\Personal\\reservations-
                   appProps = _context.sent;
 
                 case 6:
-                  // Run all GraphQL queries in the component tree
-                  // and extract the resulting data
                   apollo = Object(_initApollo__WEBPACK_IMPORTED_MODULE_11__["default"])();
 
                   if (false) {}
@@ -287,7 +281,7 @@ var _jsxFileName = "C:\\Users\\engqu\\Desktop\\projects\\Personal\\reservations-
                     apolloClient: apollo,
                     __source: {
                       fileName: _jsxFileName,
-                      lineNumber: 24
+                      lineNumber: 22
                     },
                     __self: this
                   })));
@@ -299,18 +293,12 @@ var _jsxFileName = "C:\\Users\\engqu\\Desktop\\projects\\Personal\\reservations-
                 case 13:
                   _context.prev = 13;
                   _context.t0 = _context["catch"](8);
-                  // Prevent Apollo Client GraphQL errors from crashing SSR.
-                  // Handle them in components via the data.error prop:
-                  // https://www.apollographql.com/docs/react/api/react-apollo.html#graphql-query-data-error
                   console.error("Error while running `getDataFromTree`", _context.t0);
 
                 case 16:
-                  // getDataFromTree does not call componentWillUnmount
-                  // head side effect therefore need to be cleared manually
                   next_head__WEBPACK_IMPORTED_MODULE_12___default.a.rewind();
 
                 case 17:
-                  // Extract query data from the Apollo store
                   apolloState = apollo.cache.extract();
                   return _context.abrupt("return", Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_1__["default"])({}, appProps, {
                     apolloState: apolloState
@@ -349,7 +337,7 @@ var _jsxFileName = "C:\\Users\\engqu\\Desktop\\projects\\Personal\\reservations-
           apolloClient: this.apolloClient,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 58
+            lineNumber: 49
           },
           __self: this
         }));

@@ -3,6 +3,7 @@ import { createGlobalStyle } from "styled-components";
 export const GlobalStyle = createGlobalStyle`
   html {
     font-size: 10px;
+    background: rgba(247, 247, 247, 1);
   }
   body {
     font-size: 1.6rem;
@@ -45,6 +46,16 @@ export const GlobalStyle = createGlobalStyle`
   img {
     max-width: 100%;
     height: auto;
+  }
+  button {
+    background: none;
+    border: none;
+    :hover {
+      cursor: pointer;
+    }
+    :focus {
+      outline: none;
+    }
   }
   /* Links */
   a {

@@ -4,6 +4,10 @@ export type AppTheme = {
     secondary: string;
     accent: string;
     gray: string;
+    white: string;
+  };
+  shadows: {
+    soft: string;
   };
 };
 
@@ -14,6 +18,10 @@ export const theme: AppTheme = {
     primary: "#DAF2FC",
     secondary: "#009CDE",
     accent: "#104C97",
-    gray: "#E8E8E8"
+    gray: "#E8E8E8",
+    white: "#fff"
+  },
+  shadows: {
+    soft: "0px 3px 6px rgba(0, 0, 0, 0.15)"
   }
 };

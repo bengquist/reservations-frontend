@@ -20,8 +20,6 @@ export const RESERVATION_QUERY = gql`
 `;
 
 const Detail: React.FunctionComponent<Props> = ({ id }) => {
-  console.log(id);
-
   return (
     <Query query={RESERVATION_QUERY} variables={{ id }}>
       {({ data, loading }) => {

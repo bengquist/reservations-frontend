@@ -75,7 +75,7 @@ function CreatePage() {
           setInputValues(defaultValues);
         };
 
-        if (error) console.log("error");
+        if (error) setErrorMessage(error);
 
         const isSubmitted = data && data.addReservation;
 

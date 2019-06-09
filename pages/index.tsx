@@ -68,7 +68,7 @@ function index() {
             options={options}
           >
             <Sorter />
-            {!loading ? <Spinner /> : <List reservations={data.reservations} />}
+            {loading ? <Spinner /> : <List reservations={data.reservations} />}
           </Layout>
         );
       }}

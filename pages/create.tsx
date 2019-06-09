@@ -73,7 +73,7 @@ function CreatePage() {
         );
 
         return (
-          <Layout loading={loading} title="Create Reservation">
+          <Layout title="Create Reservation">
             <Form onSubmit={preventDefault(submitHandler)}>
               <Fields
                 values={inputValues}

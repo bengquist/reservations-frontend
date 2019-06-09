@@ -171,7 +171,7 @@ function create(initialState) {
     connectToDevTools: false,
     ssrMode: !false,
     link: new apollo_boost__WEBPACK_IMPORTED_MODULE_0__["HttpLink"]({
-      uri: "http://localhost:4000/graphql",
+      uri: "https://reservations-backend.bengquist.now.sh/graphql",
       credentials: "same-origin",
       fetch:  true && isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_1___default.a
     }),

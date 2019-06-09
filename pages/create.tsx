@@ -44,9 +44,10 @@ function CreatePage() {
 
   const updateReservations = (cache, { data: { addReservation } }) => {
     const { reservations } = cache.readQuery({ query: RESERVATIONS_QUERY });
+
     cache.writeQuery({
       query: RESERVATIONS_QUERY,
-      data: { reservations: reservations.concat([addReservation]) }
+      data: { reservations: [...reservations, addReservation] }
     });
   };
 

@@ -1,5 +1,5 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Users\engqu\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add -D @types/isomorphic-unfetch
+  C:\Program Files\nodejs\node.exe C:\Users\engqu\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add -D @types/use-onclickoutside
 
 PATH: 
   C:\Users\engqu\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\local\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\engqu\bin;C:\Python27;C:\Python27\Scripts;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\WINDOWS\System32\OpenSSH;C:\Program Files\Git\cmd;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\WINDOWS\System32\OpenSSH;C:\Program Files\Redis;C:\ProgramData\chocolatey\bin;C:\Program Files\Java\jdk1.8.0_211\bin;C:\Program Files\nodejs;C:\Users\engqu\AppData\Local\Microsoft\WindowsApps;C:\mongo\bin;C:\Users\engqu\AppData\Local\Android\sdk\platform-tools;C:\Users\engqu\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\engqu\AppData\Local\Android\Sdk\platform-tools;C:\Users\engqu\AppData\Roaming\npm;C:\Program Files\Git\usr\bin\vendor_perl;C:\Program Files\Git\usr\bin\core_perl
@@ -14,7 +14,7 @@ Platform:
   win32 x64
 
 Trace: 
-  Error: https://registry.yarnpkg.com/@types%2fisomorphic-unfetch: Not found
+  Error: https://registry.yarnpkg.com/@types%2fuse-onclickoutside: Not found
       at Request.params.callback [as _callback] (C:\Users\engqu\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:65894:18)
       at Request.self.callback (C:\Users\engqu\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:129018:22)
       at Request.emit (events.js:196:13)
@@ -38,15 +38,20 @@ npm manifest:
       "start": "next start"
     },
     "dependencies": {
+      "@types/graphql": "^14.2.0",
       "apollo-boost": "^0.4.2",
+      "date-fns": "^1.30.1",
+      "graphql": "^14.3.1",
       "isomorphic-unfetch": "^3.0.0",
       "next": "^8.1.0",
       "react": "^16.8.6",
       "react-apollo": "^2.5.6",
       "react-dom": "^16.8.6",
-      "styled-components": "^4.3.1"
+      "styled-components": "^4.3.1",
+      "use-onclickoutside": "^0.3.1"
     },
     "devDependencies": {
+      "@types/date-fns": "^2.6.0",
       "@types/next": "^8.0.5",
       "@types/react": "^16.8.19",
       "@types/react-dom": "^16.8.4",
@@ -816,6 +821,18 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/@types/anymatch/-/anymatch-1.3.1.tgz#336badc1beecb9dacc38bea2cf32adf627a8421a"
     integrity sha512-/+CRPXpBDpo2RK9C68N3b2cOvO0Cf5B9aPijHsoDQTHivnGSObdOF2BRQOYjojWTDy6nQvMjmqRXIxH55VjxxA==
   
+  "@types/date-fns@^2.6.0":
+    version "2.6.0"
+    resolved "https://registry.yarnpkg.com/@types/date-fns/-/date-fns-2.6.0.tgz#b062ca46562002909be0c63a6467ed173136acc1"
+    integrity sha1-sGLKRlYgApCb4MY6ZGftFzE2rME=
+    dependencies:
+      date-fns "*"
+  
+  "@types/graphql@^14.2.0":
+    version "14.2.0"
+    resolved "https://registry.yarnpkg.com/@types/graphql/-/graphql-14.2.0.tgz#74e1da5f2a4a744ac6eb3ed57b48242ea9367202"
+    integrity sha512-lELg5m6eBOmATWyCZl8qULEOvnPIUG6B443yXKj930glXIgwQirIBPp5rthP2amJW0YSzUg2s5sfgba4mRRCNw==
+  
   "@types/next-server@*":
     version "8.1.1"
     resolved "https://registry.yarnpkg.com/@types/next-server/-/next-server-8.1.1.tgz#1570d5079cf7e82e77f48826024c6e2797cddda7"
@@ -1299,6 +1316,11 @@ Lockfile:
     version "1.2.0"
     resolved "https://registry.yarnpkg.com/aproba/-/aproba-1.2.0.tgz#6802e6264efd18c790a1b0d517f0f2627bf2c94a"
     integrity sha512-Y9J6ZjXtoYh8RnXVCMOU/ttDmk1aBjunq9vO0ta5x85WDQiQfUF9sIPBITdbiiIVcBo03Hi3jMxigBtsddlXRw==
+  
+  are-passive-events-supported@^1.1.0:
+    version "1.1.1"
+    resolved "https://registry.yarnpkg.com/are-passive-events-supported/-/are-passive-events-supported-1.1.1.tgz#3db180a1753a2186a2de50a32cded3ac0979f5dc"
+    integrity sha512-5wnvlvB/dTbfrCvJ027Y4L4gW/6Mwoy1uFSavney0YO++GU+0e/flnjiBBwH+1kh7xNCgCOGvmJC3s32joYbww==
   
   are-we-there-yet@~1.1.2:
     version "1.1.5"
@@ -1970,6 +1992,11 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/cyclist/-/cyclist-0.2.2.tgz#1b33792e11e914a2fd6d6ed6447464444e5fa640"
     integrity sha1-GzN5LhHpFKL9bW7WRHRkRE5fpkA=
   
+  date-fns@*, date-fns@^1.30.1:
+    version "1.30.1"
+    resolved "https://registry.yarnpkg.com/date-fns/-/date-fns-1.30.1.tgz#2e71bf0b119153dbb4cc4e88d9ea5acfb50dc05c"
+    integrity sha512-hBSVCvSmWC+QypYObzwGOd9wqdDpOt+0wl0KbU+R+uuZBS1jN8VsD1ss3irQDknRj5NvxiTF6oj/nDRnN/UQNw==
+  
   date-now@^0.1.4:
     version "0.1.4"
     resolved "https://registry.yarnpkg.com/date-now/-/date-now-0.1.4.tgz#eaf439fd4d4848ad74e5cc7dbef200672b9e345b"
@@ -2503,6 +2530,13 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/graphql-tag/-/graphql-tag-2.10.1.tgz#10aa41f1cd8fae5373eaf11f1f67260a3cad5e02"
     integrity sha512-jApXqWBzNXQ8jYa/HLkZJaVw9jgwNqZkywa2zfFn16Iv1Zb7ELNHkJaXHR7Quvd5SIGsy6Ny7SUKATgnu05uEg==
   
+  graphql@^14.3.1:
+    version "14.3.1"
+    resolved "https://registry.yarnpkg.com/graphql/-/graphql-14.3.1.tgz#b3aa50e61a841ada3c1f9ccda101c483f8e8c807"
+    integrity sha512-FZm7kAa3FqKdXy8YSSpAoTtyDFMIYSpCDOr+3EqlI1bxmtHu+Vv/I2vrSeT1sBOEnEniX3uo4wFhFdS/8XN6gA==
+    dependencies:
+      iterall "^1.2.2"
+  
   has-flag@^3.0.0:
     version "3.0.0"
     resolved "https://registry.yarnpkg.com/has-flag/-/has-flag-3.0.0.tgz#b5d454dc2199ae225699f3467e5a07f3b955bafd"
@@ -2879,6 +2913,11 @@ Lockfile:
     dependencies:
       node-fetch "^2.2.0"
       unfetch "^4.0.0"
+  
+  iterall@^1.2.2:
+    version "1.2.2"
+    resolved "https://registry.yarnpkg.com/iterall/-/iterall-1.2.2.tgz#92d70deb8028e0c39ff3164fdbf4d8b088130cd7"
+    integrity sha512-yynBb1g+RFUPY64fTrFv7nsjRrENBQJaX2UL+2Szc9REFrSNm1rpSXHGzhmAy7a9uv3vlvgBlXnf9RqmPH1/DA==
   
   js-levenshtein@^1.1.3:
     version "1.1.6"
@@ -4787,6 +4826,19 @@ Lockfile:
     dependencies:
       punycode "1.3.2"
       querystring "0.2.0"
+  
+  use-latest@^1.0.0:
+    version "1.0.0"
+    resolved "https://registry.yarnpkg.com/use-latest/-/use-latest-1.0.0.tgz#c86d2e4893b15f27def69da574a47136d107facb"
+    integrity sha512-CxmFi75KTXeTIBlZq3LhJ4Hz98pCaRKZHCpnbiaEHIr5QnuHvH8lKYoluPBt/ik7j/hFVPB8K3WqF6mQvLyQTg==
+  
+  use-onclickoutside@^0.3.1:
+    version "0.3.1"
+    resolved "https://registry.yarnpkg.com/use-onclickoutside/-/use-onclickoutside-0.3.1.tgz#fdd723a6a499046b6bc761e4a03af432eee5917b"
+    integrity sha512-aahvbW5+G0XJfzj31FJeLsvc6qdKbzeTsQ8EtkHHq5qTg6bm/qkJeKLcgrpnYeHDDbd7uyhImLGdkbM9BRzOHQ==
+    dependencies:
+      are-passive-events-supported "^1.1.0"
+      use-latest "^1.0.0"
   
   use@^3.1.0:
     version "3.1.1"

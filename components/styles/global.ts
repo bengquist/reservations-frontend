@@ -7,6 +7,7 @@ export const GlobalStyle = createGlobalStyle`
   }
   body {
     font-size: 1.6rem;
+    height: 100vh;
   }
   :root {
     --step-up-5: 2em;
@@ -51,7 +52,7 @@ export const GlobalStyle = createGlobalStyle`
     background: none;
     border: none;
     box-shadow: 0 0 0 1pt rgb(0, 0, 0, 0.3);
-    
+
     :hover {
       cursor: pointer;
     }

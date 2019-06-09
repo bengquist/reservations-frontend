@@ -24,9 +24,9 @@ export default Sorter;
 
 const Container = styled.div`
   background: ${props => props.theme.colors.gray};
+  box-shadow: ${props => props.theme.shadows.soft};
   width: 100%;
   border-radius: 0.5rem;
-  box-shadow: ${props => props.theme.shadows.soft};
   overflow: hidden;
 
   display: grid;
@@ -47,6 +47,6 @@ const Container = styled.div`
   }
 
   > button > p {
-    margin: 1rem;
+    margin: 0.5rem;
   }
 `;

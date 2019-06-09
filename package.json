@@ -18,7 +18,8 @@
     "react": "^16.8.6",
     "react-apollo": "^2.5.6",
     "react-dom": "^16.8.6",
-    "styled-components": "^4.3.1"
+    "styled-components": "^4.3.1",
+    "use-onclickoutside": "^0.3.1"
   },
   "devDependencies": {
     "@types/date-fns": "^2.6.0",

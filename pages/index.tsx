@@ -4,7 +4,6 @@ import gql from "graphql-tag";
 import Sorter from "../components/ui/Sorter";
 import Search from "../components/search/Search";
 import List from "../components/reservation/List";
-import { useState } from "react";
 import Link from "next/link";
 import Button from "../components/ui/Button";
 
@@ -21,8 +20,6 @@ export const RESERVATIONS_QUERY = gql`
 `;
 
 function index() {
-  const [modal, setModal] = useState(true);
-
   const options = (
     <>
       <Link href="/create">

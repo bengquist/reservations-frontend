@@ -1,51 +1,42 @@
-import gql from "graphql-tag";
 import Layout from "../components/Layout";
 import { Mutation } from "react-apollo";
-import DatePicker from "react-datepicker";
 import Button from "../components/ui/Button";
 import Link from "next/link";
-import styled, { css } from "styled-components";
-import Section from "../components/ui/Section";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { preventDefault } from "../lib/eventHelpers";
 import isEqual from "lodash/isEqual";
-import { RESERVATIONS_QUERY } from ".";
-import "react-datepicker/dist/react-datepicker-cssmodules.css";
-import { inputStyle } from "../components/ui/Input";
+import Fields from "../components/reservation/Fields";
+import {
+  Reservation,
+  ReservationUpdate
+} from "../components/reservation/types";
+import {
+  Message,
+  Form,
+  ButtonContainer,
+  secondaryStyles
+} from "../components/reservation/styles";
+import { RESERVATION_MUTATION } from "../components/reservation/mutation";
+import { RESERVATIONS_QUERY } from "../components/reservation/query";
 import { format } from "date-fns";
 
-export const RESERVATION_MUTATION = gql`
-  mutation RESERVATION_MUTATION(
-    $name: String!
-    $hotelName: String!
-    $arrivalDate: String!
-    $departureDate: String!
-  ) {
-    addReservation(
-      name: $name
-      hotelName: $hotelName
-      arrivalDate: $arrivalDate
-      departureDate: $departureDate
-    ) {
-      name
-      hotelName
-      arrivalDate
-      departureDate
-      id
-    }
-  }
-`;
+type Data = {
+  addReservation: Reservation[];
+};
 
 function CreatePage() {
   const defaultValues = {
     name: "",
     hotelName: "",
-    arrivalDate: "",
-    departureDate: "",
+    arrivalDate: Date.now(),
+    departureDate: Date.now() + 24 * 60 * 60 * 1000,
     errorMessage: ""
   };
 
-  const updateReservations = (cache, { data: { addReservation } }) => {
+  const updateReservations: ReservationUpdate = (
+    cache,
+    { data: { addReservation } }
+  ) => {
     const { reservations } = cache.readQuery({ query: RESERVATIONS_QUERY });
 
     cache.writeQuery({
@@ -55,15 +46,10 @@ function CreatePage() {
   };
 
   const [inputValues, setInputValues] = useState(defaultValues);
-  const [errorMessage, setErrorMessage] = useState();
   const { name, hotelName, arrivalDate, departureDate } = inputValues;
 
-  useEffect(() => {
-    setErrorMessage("");
-  }, [inputValues]);
-
   return (
-    <Mutation
+    <Mutation<Data>
       mutation={RESERVATION_MUTATION}
       variables={{
         name,
@@ -73,85 +59,35 @@ function CreatePage() {
       }}
       update={updateReservations}
     >
-      {(addReservation, { loading, data, error }) => {
+      {(addReservation, { loading, data }) => {
         const submitHandler = async () => {
           await addReservation();
           setInputValues(defaultValues);
         };
 
-        if (error) setErrorMessage(error);
-
-        const isSubmitted = data && data.addReservation;
+        const isSubmitted =
+          data && data.addReservation && isEqual(inputValues, defaultValues);
+        const message = isSubmitted && (
+          <Message>Reservation successfully added!</Message>
+        );
 
         return (
           <Layout loading={loading} title="Create Reservation">
             <Form onSubmit={preventDefault(submitHandler)}>
-              <Section
-                label="Reservation Name:"
-                placeholder="Blake"
-                value={inputValues.name}
-                setValue={(value: string) =>
+              <Fields
+                values={inputValues}
+                onInput={(value: any) =>
                   setInputValues(values => {
-                    return { ...values, name: value };
+                    console.log(value);
+                    return { ...values, ...value };
                   })
                 }
               />
-              <Section
-                label="Hotel:"
-                placeholder="Hampton Inn & Suites"
-                value={inputValues.hotelName}
-                setValue={(value: string) =>
-                  setInputValues(values => {
-                    return { ...values, hotelName: value };
-                  })
-                }
-              />
-              <Section
-                label="Arrival Date:"
-                placeholder="06/10/2019"
-                value={inputValues.arrivalDate}
-              >
-                <DatePicker
-                  css={inputStyle}
-                  selected={arrivalDate || Date.now()}
-                  onChange={(date: Date) =>
-                    setInputValues(values => {
-                      return { ...values, arrivalDate: date };
-                    })
-                  }
-                />
-              </Section>
-              <Section
-                label="Departure Date:"
-                placeholder="06/11/2019"
-                value={inputValues.departureDate}
-              >
-                <DatePicker
-                  css={inputStyle}
-                  selected={departureDate || Date.now() + 24 * 60 * 60 * 1000}
-                  onChange={(date: string) =>
-                    setInputValues(values => {
-                      return { ...values, departureDate: date };
-                    })
-                  }
-                />
-              </Section>
-
-              {(isSubmitted || errorMessage) && (
-                <Message style={{ background: errorMessage && "red" }}>
-                  {errorMessage || "Reservation successfully added!"}
-                </Message>
-              )}
+              {message}
               <ButtonContainer>
                 <Link href="/">
-                  <Button
-                    disabled={loading}
-                    type="button"
-                    css={secondaryStyles}
-                  >
-                    {isSubmitted && isEqual(inputValues, defaultValues)
-                      ? "Home"
-                      : "Cancel"}
+                  <Button type="button" css={secondaryStyles}>
+                    Cancel
                   </Button>
                 </Link>
                 <Button type="submit">Submit</Button>
@@ -165,46 +101,3 @@ function CreatePage() {
 }
 
 export default CreatePage;
-
-const Form = styled.form`
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 2rem;
-
-  @media (max-width: 500px) {
-    grid-template-columns: auto;
-  }
-`;
-
-const ButtonContainer = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 0.5rem;
-  justify-self: end;
-  grid-column: 2;
-  grid-row: 3;
-
-  @media (max-width: 500px) {
-    grid-column: auto;
-    grid-row: auto;
-  }
-`;
-
-const secondaryStyles = css`
-  background: white;
-  color: black;
-
-  :focus {
-    color: white;
-  }
-`;
-
-const Message = styled.label`
-  background: ${props => props.theme.colors.accent};
-  grid-column: 1/3;
-  grid-row: 3;
-  color: white;
-  border-radius: 5px;
-  padding: 5px 20px;
-  margin: 0 auto;
-`;

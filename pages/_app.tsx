@@ -4,8 +4,9 @@ import { theme } from "../components/styles/theme";
 import { GlobalStyle } from "../components/styles/global";
 import { ApolloProvider } from "react-apollo";
 import withApollo from "../lib/withApollo";
+import "react-datepicker/dist/react-datepicker-cssmodules.css";
 
-class MyApp extends App {
+class MyApp extends App<any> {
   static async getInitialProps({ Component, ctx }: any) {
     let pageProps = {};
 

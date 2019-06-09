@@ -17,7 +17,7 @@ const List: React.FunctionComponent<Props> = ({ reservations }) => {
 export default List;
 
 const CardsContainer = styled.div`
-  box-shadow: ${props => props.theme.shadows.soft};
+  box-shadow: ${props => props.theme.shadows && props.theme.shadows.soft};
   border-radius: 5px;
   overflow: hidden;
 `;

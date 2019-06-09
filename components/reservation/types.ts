@@ -5,3 +5,10 @@ export type Reservation = {
   arrivalDate: string;
   departureDate: string;
 };
+
+export type ReservationUpdate = (
+  cache: any,
+  {
+    data: { addReservation }
+  }: any
+) => void;

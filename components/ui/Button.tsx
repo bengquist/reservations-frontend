@@ -14,7 +14,7 @@ const Button: React.FunctionComponent<
 export default Button;
 
 export const buttonStyle = css`
-  background: ${props => props.theme.colors.accent};
+  background: ${props => props.theme.colors && props.theme.colors.accent};
   color: white;
   padding: 0.5rem 2rem;
   border-radius: 5px;

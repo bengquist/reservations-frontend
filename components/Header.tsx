@@ -18,15 +18,15 @@ export default Header;
 const Container = styled.div`
   background-image: linear-gradient(
     to top,
-    ${props => props.theme.colors.accent},
-    ${props => props.theme.colors.secondary}
+    ${props => props.theme.colors && props.theme.colors.accent},
+    ${props => props.theme.colors && props.theme.colors.secondary}
   );
   color: white;
   width: 100%;
   border-radius: 5px;
   margin-bottom: 2rem;
   text-align: center;
-  box-shadow: ${props => props.theme.shadows.soft};
+  box-shadow: ${props => props.theme.shadows && props.theme.shadows.soft};
 
   > h1 {
     font-size: 3.5rem;

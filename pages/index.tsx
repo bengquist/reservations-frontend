@@ -1,23 +1,16 @@
 import Layout from "../components/Layout";
 import { Query } from "react-apollo";
-import gql from "graphql-tag";
 import Sorter from "../components/ui/Sorter";
 import Search from "../components/search/Search";
 import List from "../components/reservation/List";
 import Link from "next/link";
 import Button from "../components/ui/Button";
+import { Reservation } from "../components/reservation/types";
+import { RESERVATIONS_QUERY } from "../components/reservation/query";
 
-export const RESERVATIONS_QUERY = gql`
-  query RESERVATIONS_QUERY {
-    reservations {
-      name
-      hotelName
-      arrivalDate
-      departureDate
-      id
-    }
-  }
-`;
+type Data = {
+  reservations: Reservation[];
+};
 
 function index() {
   const options = (
@@ -30,8 +23,10 @@ function index() {
   );
 
   return (
-    <Query query={RESERVATIONS_QUERY}>
+    <Query<Data> query={RESERVATIONS_QUERY}>
       {({ data, loading }) => {
+        if (!data) return null;
+
         return (
           <Layout loading={loading} title="Reservations" options={options}>
             <Sorter />

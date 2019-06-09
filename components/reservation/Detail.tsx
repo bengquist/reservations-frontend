@@ -1,29 +1,23 @@
-import gql from "graphql-tag";
 import { Query } from "react-apollo";
 import styled from "styled-components";
 import { formatDate } from "../../lib/formatHelpers";
+import { Reservation } from "./types";
+import { RESERVATION_QUERY } from "./query";
 
 type Props = {
   id: string;
 };
 
-export const RESERVATION_QUERY = gql`
-  query RESERVATION_QUERY($id: String!) {
-    reservation(id: $id) {
-      name
-      hotelName
-      arrivalDate
-      departureDate
-      id
-    }
-  }
-`;
+type Data = {
+  reservation: Reservation;
+};
 
 const Detail: React.FunctionComponent<Props> = ({ id }) => {
   return (
-    <Query query={RESERVATION_QUERY} variables={{ id }}>
-      {({ data, loading }) => {
-        if (loading) return null;
+    <Query<Data> query={RESERVATION_QUERY} variables={{ id }}>
+      {({ data }) => {
+        if (!data) return null;
+
         const {
           name,
           hotelName,
@@ -36,17 +30,16 @@ const Detail: React.FunctionComponent<Props> = ({ id }) => {
             <h1>Reservation</h1>
             <div className="info">
               <p>
-                <span>Name: </span>
-                {name}
+                <span>Name:</span> {name}
               </p>
               <p>
-                <span>Hotel Name: </span> {hotelName}
+                <span>Hotel Name:</span> {hotelName}
               </p>
               <p>
-                <span>Arrival Date: </span> {formatDate(arrivalDate)}
+                <span>Arrival Date:</span> {formatDate(arrivalDate)}
               </p>
               <p>
-                <span>Departure Date: </span> {formatDate(departureDate)}
+                <span>Departure Date:</span> {formatDate(departureDate)}
               </p>
             </div>
           </Container>
@@ -60,13 +53,13 @@ export default Detail;
 
 const Container = styled.div`
   > h1 {
-    background: ${props => props.theme.colors.gray};
+    background: ${props => props.theme.colors && props.theme.colors.gray};
     text-transform: uppercase;
     font-weight: 700;
-    color: ${props => props.theme.colors.accent};
+    color: ${props => props.theme.colors && props.theme.colors.accent};
     text-align: center;
     padding: 1.5rem;
-    box-shadow: ${props => props.theme.shadows.soft};
+    box-shadow: ${props => props.theme.shadows && props.theme.shadows.soft};
   }
 
   > .info {
@@ -75,7 +68,7 @@ const Container = styled.div`
     padding: 2rem;
 
     > p > span {
-      color: ${props => props.theme.colors.accent};
+      color: ${props => props.theme.colors && props.theme.colors.accent};
       font-weight: 700;
     }
   }

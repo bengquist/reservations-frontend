@@ -25,18 +25,23 @@ export const GlobalStyle = createGlobalStyle`
     --header: rgb(0,0,0);
   }
   @font-face {
-    font-family: system;
+    font-family: 'pt-sans';
+    src: url('/static/PT_Sans-Web-Regular.woff')
+    format('woff2');
+    font-weight: normal; 
     font-style: normal;
-    font-weight: 500;
-    src: local(".SFNSText-Light"), local(".HelveticaNeueDeskInterface-Light"), local(".LucidaGrandeUI"), local("Ubuntu Light"), local("Segoe UI Light"), local("Roboto-Light"), local("DroidSans"), local("Tahoma");
+  }
+  @font-face {
+    font-family: 'pt-sans';
+    src: url('/static/PT_Sans-Web-Bold.woff')
+    format('woff2');
+    font-weight: bold; 
+    font-style: normal;
   }
   body, h1, h2, h3, h4, h5, h6, p, ol, ul, input[type=text], input[type=email], button {
     margin: 0;
     font-weight: 500;
-    
-  }
-  body, h1, h2, h3, h4, h5, h6, p, ol, ul, input[type=text], input[type=email], button {
-    font-family: "system"
+    font-family: "pt-sans"
   }
   *, *:before, *:after {
     box-sizing: inherit;

@@ -15,7 +15,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function _templateObject() {
-  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  html {\n    font-size: 10px;\n    background: rgba(247, 247, 247, 1);\n  }\n  body {\n    font-size: 1.5rem;\n    height: 100vh;\n  }\n  :root {\n    --step-up-5: 2em;\n    --step-up-4: 1.7511em;\n    --step-up-3: 1.5157em;\n    --step-up-2: 1.3195em;\n    --step-up-1: 1.1487em;\n    /* baseline: 1em */\n    --step-down-1: 0.8706em;\n    --step-down-2: 0.7579em;\n    --step-down-3: 0.6599em;\n    --step-down-4: 0.5745em;\n    --step-down-5: 0.5em;\n    /* Colors */\n    --header: rgb(0,0,0);\n  }\n  @font-face {\n    font-family: system;\n    font-style: normal;\n    font-weight: 500;\n    src: local(\".SFNSText-Light\"), local(\".HelveticaNeueDeskInterface-Light\"), local(\".LucidaGrandeUI\"), local(\"Ubuntu Light\"), local(\"Segoe UI Light\"), local(\"Roboto-Light\"), local(\"DroidSans\"), local(\"Tahoma\");\n  }\n  body, h1, h2, h3, h4, h5, h6, p, ol, ul, input[type=text], input[type=email], button {\n    margin: 0;\n    font-weight: 500;\n    \n  }\n  body, h1, h2, h3, h4, h5, h6, p, ol, ul, input[type=text], input[type=email], button {\n    font-family: \"system\"\n  }\n  *, *:before, *:after {\n    box-sizing: inherit;\n  }\n  ol, ul {\n    list-style: none;\n  }\n  img {\n    max-width: 100%;\n    height: auto;\n  }\n  button {\n    background: none;\n    border: none;\n    box-shadow: 0 0 0 1pt rgb(0, 0, 0, 0.3);\n\n    :hover {\n      cursor: pointer;\n    }\n    :focus {\n      outline: none;\n    }\n  }\n  input {\n    border: none;\n    box-shadow: 0 0 0 1pt rgb(0, 0, 0, 0.3);\n  }\n  /* Links */\n  a {\n    text-decoration: none;\n    color: inherit;\n  &.active {\n      text-decoration: none;\n    }\n  }\n"]);
+  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  html {\n    font-size: 10px;\n    background: rgba(247, 247, 247, 1);\n  }\n  body {\n    font-size: 1.5rem;\n    height: 100vh;\n  }\n  :root {\n    --step-up-5: 2em;\n    --step-up-4: 1.7511em;\n    --step-up-3: 1.5157em;\n    --step-up-2: 1.3195em;\n    --step-up-1: 1.1487em;\n    /* baseline: 1em */\n    --step-down-1: 0.8706em;\n    --step-down-2: 0.7579em;\n    --step-down-3: 0.6599em;\n    --step-down-4: 0.5745em;\n    --step-down-5: 0.5em;\n    /* Colors */\n    --header: rgb(0,0,0);\n  }\n  @font-face {\n    font-family: 'pt-sans';\n    src: url('/static/PT_Sans-Web-Regular.woff')\n    format('woff2');\n    font-weight: normal; \n    font-style: normal;\n  }\n  @font-face {\n    font-family: 'pt-sans';\n    src: url('/static/PT_Sans-Web-Bold.woff')\n    format('woff2');\n    font-weight: bold; \n    font-style: normal;\n  }\n  body, h1, h2, h3, h4, h5, h6, p, ol, ul, input[type=text], input[type=email], button {\n    margin: 0;\n    font-weight: 500;\n    font-family: \"pt-sans\"\n  }\n  *, *:before, *:after {\n    box-sizing: inherit;\n  }\n  ol, ul {\n    list-style: none;\n  }\n  img {\n    max-width: 100%;\n    height: auto;\n  }\n  button {\n    background: none;\n    border: none;\n    box-shadow: 0 0 0 1pt rgb(0, 0, 0, 0.3);\n\n    :hover {\n      cursor: pointer;\n    }\n    :focus {\n      outline: none;\n    }\n  }\n  input {\n    border: none;\n    box-shadow: 0 0 0 1pt rgb(0, 0, 0, 0.3);\n  }\n  /* Links */\n  a {\n    text-decoration: none;\n    color: inherit;\n  &.active {\n      text-decoration: none;\n    }\n  }\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -15249,121 +15249,6 @@ function getVisitFn(visitor, kind, isLeaving) {
 
 /***/ }),
 
-/***/ "./node_modules/hoist-non-react-statics/dist/hoist-non-react-statics.cjs.js":
-/*!**********************************************************************************!*\
-  !*** ./node_modules/hoist-non-react-statics/dist/hoist-non-react-statics.cjs.js ***!
-  \**********************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-/**
- * Copyright 2015, Yahoo! Inc.
- * Copyrights licensed under the New BSD License. See the accompanying LICENSE file for terms.
- */
-var ReactIs = __webpack_require__(/*! react-is */ "./node_modules/react-is/index.js");
-var REACT_STATICS = {
-    childContextTypes: true,
-    contextType: true,
-    contextTypes: true,
-    defaultProps: true,
-    displayName: true,
-    getDefaultProps: true,
-    getDerivedStateFromError: true,
-    getDerivedStateFromProps: true,
-    mixins: true,
-    propTypes: true,
-    type: true
-};
-
-var KNOWN_STATICS = {
-    name: true,
-    length: true,
-    prototype: true,
-    caller: true,
-    callee: true,
-    arguments: true,
-    arity: true
-};
-
-var FORWARD_REF_STATICS = {
-    '$$typeof': true,
-    render: true,
-    defaultProps: true,
-    displayName: true,
-    propTypes: true
-};
-
-var MEMO_STATICS = {
-    '$$typeof': true,
-    compare: true,
-    defaultProps: true,
-    displayName: true,
-    propTypes: true,
-    type: true
-};
-
-var TYPE_STATICS = {};
-TYPE_STATICS[ReactIs.ForwardRef] = FORWARD_REF_STATICS;
-
-function getStatics(component) {
-    if (ReactIs.isMemo(component)) {
-        return MEMO_STATICS;
-    }
-    return TYPE_STATICS[component['$$typeof']] || REACT_STATICS;
-}
-
-var defineProperty = Object.defineProperty;
-var getOwnPropertyNames = Object.getOwnPropertyNames;
-var getOwnPropertySymbols = Object.getOwnPropertySymbols;
-var getOwnPropertyDescriptor = Object.getOwnPropertyDescriptor;
-var getPrototypeOf = Object.getPrototypeOf;
-var objectPrototype = Object.prototype;
-
-function hoistNonReactStatics(targetComponent, sourceComponent, blacklist) {
-    if (typeof sourceComponent !== 'string') {
-        // don't hoist over string (html) components
-
-        if (objectPrototype) {
-            var inheritedComponent = getPrototypeOf(sourceComponent);
-            if (inheritedComponent && inheritedComponent !== objectPrototype) {
-                hoistNonReactStatics(targetComponent, inheritedComponent, blacklist);
-            }
-        }
-
-        var keys = getOwnPropertyNames(sourceComponent);
-
-        if (getOwnPropertySymbols) {
-            keys = keys.concat(getOwnPropertySymbols(sourceComponent));
-        }
-
-        var targetStatics = getStatics(targetComponent);
-        var sourceStatics = getStatics(sourceComponent);
-
-        for (var i = 0; i < keys.length; ++i) {
-            var key = keys[i];
-            if (!KNOWN_STATICS[key] && !(blacklist && blacklist[key]) && !(sourceStatics && sourceStatics[key]) && !(targetStatics && targetStatics[key])) {
-                var descriptor = getOwnPropertyDescriptor(sourceComponent, key);
-                try {
-                    // Avoid failures from read-only properties
-                    defineProperty(targetComponent, key, descriptor);
-                } catch (e) {}
-            }
-        }
-
-        return targetComponent;
-    }
-
-    return targetComponent;
-}
-
-module.exports = hoistNonReactStatics;
-
-
-/***/ }),
-
 /***/ "./node_modules/is-what/dist/index.esm.js":
 /*!************************************************!*\
   !*** ./node_modules/is-what/dist/index.esm.js ***!
@@ -22370,6 +22255,121 @@ exports.encode = exports.stringify = __webpack_require__(/*! ./encode */ "./node
 
 /***/ }),
 
+/***/ "./node_modules/react-apollo/node_modules/hoist-non-react-statics/dist/hoist-non-react-statics.cjs.js":
+/*!************************************************************************************************************!*\
+  !*** ./node_modules/react-apollo/node_modules/hoist-non-react-statics/dist/hoist-non-react-statics.cjs.js ***!
+  \************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+/**
+ * Copyright 2015, Yahoo! Inc.
+ * Copyrights licensed under the New BSD License. See the accompanying LICENSE file for terms.
+ */
+var ReactIs = __webpack_require__(/*! react-is */ "./node_modules/react-is/index.js");
+var REACT_STATICS = {
+    childContextTypes: true,
+    contextType: true,
+    contextTypes: true,
+    defaultProps: true,
+    displayName: true,
+    getDefaultProps: true,
+    getDerivedStateFromError: true,
+    getDerivedStateFromProps: true,
+    mixins: true,
+    propTypes: true,
+    type: true
+};
+
+var KNOWN_STATICS = {
+    name: true,
+    length: true,
+    prototype: true,
+    caller: true,
+    callee: true,
+    arguments: true,
+    arity: true
+};
+
+var FORWARD_REF_STATICS = {
+    '$$typeof': true,
+    render: true,
+    defaultProps: true,
+    displayName: true,
+    propTypes: true
+};
+
+var MEMO_STATICS = {
+    '$$typeof': true,
+    compare: true,
+    defaultProps: true,
+    displayName: true,
+    propTypes: true,
+    type: true
+};
+
+var TYPE_STATICS = {};
+TYPE_STATICS[ReactIs.ForwardRef] = FORWARD_REF_STATICS;
+
+function getStatics(component) {
+    if (ReactIs.isMemo(component)) {
+        return MEMO_STATICS;
+    }
+    return TYPE_STATICS[component['$$typeof']] || REACT_STATICS;
+}
+
+var defineProperty = Object.defineProperty;
+var getOwnPropertyNames = Object.getOwnPropertyNames;
+var getOwnPropertySymbols = Object.getOwnPropertySymbols;
+var getOwnPropertyDescriptor = Object.getOwnPropertyDescriptor;
+var getPrototypeOf = Object.getPrototypeOf;
+var objectPrototype = Object.prototype;
+
+function hoistNonReactStatics(targetComponent, sourceComponent, blacklist) {
+    if (typeof sourceComponent !== 'string') {
+        // don't hoist over string (html) components
+
+        if (objectPrototype) {
+            var inheritedComponent = getPrototypeOf(sourceComponent);
+            if (inheritedComponent && inheritedComponent !== objectPrototype) {
+                hoistNonReactStatics(targetComponent, inheritedComponent, blacklist);
+            }
+        }
+
+        var keys = getOwnPropertyNames(sourceComponent);
+
+        if (getOwnPropertySymbols) {
+            keys = keys.concat(getOwnPropertySymbols(sourceComponent));
+        }
+
+        var targetStatics = getStatics(targetComponent);
+        var sourceStatics = getStatics(sourceComponent);
+
+        for (var i = 0; i < keys.length; ++i) {
+            var key = keys[i];
+            if (!KNOWN_STATICS[key] && !(blacklist && blacklist[key]) && !(sourceStatics && sourceStatics[key]) && !(targetStatics && targetStatics[key])) {
+                var descriptor = getOwnPropertyDescriptor(sourceComponent, key);
+                try {
+                    // Avoid failures from read-only properties
+                    defineProperty(targetComponent, key, descriptor);
+                } catch (e) {}
+            }
+        }
+
+        return targetComponent;
+    }
+
+    return targetComponent;
+}
+
+module.exports = hoistNonReactStatics;
+
+
+/***/ }),
+
 /***/ "./node_modules/react-apollo/react-apollo.esm.js":
 /*!*******************************************************!*\
   !*** ./node_modules/react-apollo/react-apollo.esm.js ***!
@@ -22404,7 +22404,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var apollo_client__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! apollo-client */ "./node_modules/apollo-client/bundle.esm.js");
 /* harmony import */ var lodash_isequal__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! lodash.isequal */ "./node_modules/lodash.isequal/index.js");
 /* harmony import */ var lodash_isequal__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(lodash_isequal__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var hoist_non_react_statics__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! hoist-non-react-statics */ "./node_modules/hoist-non-react-statics/dist/hoist-non-react-statics.cjs.js");
+/* harmony import */ var hoist_non_react_statics__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! hoist-non-react-statics */ "./node_modules/react-apollo/node_modules/hoist-non-react-statics/dist/hoist-non-react-statics.cjs.js");
 /* harmony import */ var hoist_non_react_statics__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(hoist_non_react_statics__WEBPACK_IMPORTED_MODULE_6__);
 
 
@@ -32755,6 +32755,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_styles_global__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../components/styles/global */ "./components/styles/global.ts");
 /* harmony import */ var react_apollo__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! react-apollo */ "./node_modules/react-apollo/react-apollo.esm.js");
 /* harmony import */ var _lib_withApollo__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../lib/withApollo */ "./lib/withApollo.ts");
+/* harmony import */ var react_datepicker_dist_react_datepicker_cssmodules_css__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! react-datepicker/dist/react-datepicker-cssmodules.css */ "./node_modules/react-datepicker/dist/react-datepicker-cssmodules.css");
+/* harmony import */ var react_datepicker_dist_react_datepicker_cssmodules_css__WEBPACK_IMPORTED_MODULE_15___default = /*#__PURE__*/__webpack_require__.n(react_datepicker_dist_react_datepicker_cssmodules_css__WEBPACK_IMPORTED_MODULE_15__);
 
 
 
@@ -32764,6 +32766,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var _jsxFileName = "C:\\Users\\engqu\\Desktop\\projects\\Personal\\reservations-client\\pages\\_app.tsx";
+
 
 
 
@@ -32793,33 +32796,33 @@ function (_App) {
       return react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(next_app__WEBPACK_IMPORTED_MODULE_9__["Container"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 23
+          lineNumber: 24
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(styled_components__WEBPACK_IMPORTED_MODULE_10__["ThemeProvider"], {
         theme: _components_styles_theme__WEBPACK_IMPORTED_MODULE_11__["theme"],
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 24
+          lineNumber: 25
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(react_apollo__WEBPACK_IMPORTED_MODULE_13__["ApolloProvider"], {
         client: apolloClient,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 25
+          lineNumber: 26
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_components_styles_global__WEBPACK_IMPORTED_MODULE_12__["GlobalStyle"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 26
+          lineNumber: 27
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(Component, Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_2__["default"])({}, pageProps, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 27
+          lineNumber: 28
         },
         __self: this
       })))));
@@ -32888,5 +32891,5 @@ module.exports = dll_829b10deddf10e1653a8;
 
 /***/ })
 
-},[["./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F_app&absolutePagePath=private-next-pages%2F_app.tsx!./","static/runtime/webpack.js"]]]);
+},[["./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F_app&absolutePagePath=private-next-pages%2F_app.tsx!./","static/runtime/webpack.js","styles"]]]);
 //# sourceMappingURL=_app.js.map

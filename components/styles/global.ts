@@ -40,6 +40,7 @@ export const GlobalStyle = createGlobalStyle`
   }
   body, h1, h2, h3, h4, h5, h6, p, ol, ul, input[type=text], input[type=email], button {
     margin: 0;
+    padding: 0;
     font-weight: 500;
     font-family: "pt-sans"
   }

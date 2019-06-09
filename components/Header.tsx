@@ -24,7 +24,7 @@ const Container = styled.div`
   color: white;
   width: 100%;
   border-radius: 5px;
-  margin-bottom: 10px;
+  margin-bottom: 2rem;
   text-align: center;
   box-shadow: ${props => props.theme.shadows.soft};
 

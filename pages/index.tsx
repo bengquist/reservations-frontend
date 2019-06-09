@@ -22,20 +22,18 @@ export const RESERVATIONS_QUERY = gql`
 function index() {
   const options = (
     <>
+      <Search />
       <Link href="/create">
         <Button>Create</Button>
       </Link>
-      <Search />
     </>
   );
 
   return (
     <Query query={RESERVATIONS_QUERY}>
       {({ data, loading }) => {
-        if (loading) return null;
-
         return (
-          <Layout title="Reservations" options={options}>
+          <Layout loading={loading} title="Reservations" options={options}>
             <Sorter />
             <List reservations={data.reservations} />
           </Layout>

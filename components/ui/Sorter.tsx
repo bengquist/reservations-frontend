@@ -47,6 +47,6 @@ const Container = styled.div`
   }
 
   > button > p {
-    margin: 0.5rem;
+    margin: 1rem 0.5rem;
   }
 `;

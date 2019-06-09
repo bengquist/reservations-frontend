@@ -80,7 +80,7 @@ function CreatePage() {
         const isSubmitted = data && data.addReservation;
 
         return (
-          <Layout title="Create Reservation">
+          <Layout loading={loading} title="Create Reservation">
             <Form onSubmit={preventDefault(submitHandler)}>
               <Section
                 label="Reservation Name:"

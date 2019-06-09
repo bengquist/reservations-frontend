@@ -1,6 +1,7 @@
 import gql from "graphql-tag";
 import Layout from "../components/Layout";
 import { Mutation } from "react-apollo";
+import DatePicker from "react-datepicker";
 import Button from "../components/ui/Button";
 import Link from "next/link";
 import styled, { css } from "styled-components";
@@ -10,6 +11,8 @@ import { preventDefault } from "../lib/eventHelpers";
 import isEqual from "lodash/isEqual";
 import { RESERVATIONS_QUERY } from ".";
 import { isValidDate } from "../lib/common";
+import "react-datepicker/dist/react-datepicker-cssmodules.css";
+import { inputStyle } from "../components/ui/Input";
 
 export const RESERVATION_MUTATION = gql`
   mutation RESERVATION_MUTATION(
@@ -107,22 +110,33 @@ function CreatePage() {
                 label="Arrival Date:"
                 placeholder="06/10/2019"
                 value={inputValues.arrivalDate}
-                setValue={(value: string) =>
-                  setInputValues(values => {
-                    return { ...values, arrivalDate: value };
-                  })
-                }
-              />
+              >
+                <DatePicker
+                  css={inputStyle}
+                  selected={arrivalDate || Date.now()}
+                  onChange={(date: string) =>
+                    setInputValues(values => {
+                      return { ...values, arrivalDate: date };
+                    })
+                  }
+                />
+              </Section>
               <Section
                 label="Departure Date:"
                 placeholder="06/11/2019"
                 value={inputValues.departureDate}
-                setValue={(value: string) =>
-                  setInputValues(values => {
-                    return { ...values, departureDate: value };
-                  })
-                }
-              />
+              >
+                <DatePicker
+                  css={inputStyle}
+                  selected={arrivalDate || Date.now() + 24 * 60 * 60 * 1000}
+                  onChange={(date: string) =>
+                    setInputValues(values => {
+                      return { ...values, departureDate: date };
+                    })
+                  }
+                />
+              </Section>
+
               {(isSubmitted || errorMessage) && (
                 <Message style={{ background: errorMessage && "red" }}>
                   {errorMessage || "Reservation successfully added!"}

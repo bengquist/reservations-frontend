@@ -6,7 +6,7 @@ export const GlobalStyle = createGlobalStyle`
     background: rgba(247, 247, 247, 1);
   }
   body {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     height: 100vh;
   }
   :root {
@@ -27,13 +27,13 @@ export const GlobalStyle = createGlobalStyle`
   @font-face {
     font-family: system;
     font-style: normal;
-    font-weight: 300;
+    font-weight: 500;
     src: local(".SFNSText-Light"), local(".HelveticaNeueDeskInterface-Light"), local(".LucidaGrandeUI"), local("Ubuntu Light"), local("Segoe UI Light"), local("Roboto-Light"), local("DroidSans"), local("Tahoma");
   }
   body, h1, h2, h3, h4, h5, h6, p, ol, ul, input[type=text], input[type=email], button {
     margin: 0;
-    padding: 0;
-    font-weight: normal;
+    font-weight: 500;
+    
   }
   body, h1, h2, h3, h4, h5, h6, p, ol, ul, input[type=text], input[type=email], button {
     font-family: "system"

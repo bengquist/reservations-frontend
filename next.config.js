@@ -1,4 +1,4 @@
 const withTypescript = require("@zeit/next-typescript");
-module.exports = withTypescript({
-  /* config options here */
-});
+const withCSS = require("@zeit/next-css");
+
+module.exports = withTypescript(withCSS());

@@ -1,28 +1,33 @@
 import styled from "styled-components";
 import Input from "./Input";
+import { ReactNode } from "react";
 
 type Props = {
   label: string;
   placeholder: string;
   value: string;
   setValue: (value: string) => void;
+  children?: ReactNode;
 };
 
 const Section: React.FunctionComponent<Props> = ({
   label,
   placeholder,
   value,
-  setValue
+  setValue,
+  children
 }) => {
   return (
     <Container>
       <Label htmlFor={label}>{label}</Label>
-      <Input
-        id={label}
-        placeholder={placeholder}
-        value={value}
-        onChange={e => setValue(e.target.value)}
-      />
+      {children || (
+        <Input
+          id={label}
+          placeholder={placeholder}
+          value={value}
+          onChange={e => setValue(e.target.value)}
+        />
+      )}
     </Container>
   );
 };

@@ -6,10 +6,10 @@ function Input(props) {
 
 export default Input;
 
-const inputStyle = css`
+export const inputStyle = css`
   border-radius: 5px;
   transition: 0.2s;
-  padding: 5px;
+  padding: 0.5rem;
   min-width: 250px;
 
   :focus {

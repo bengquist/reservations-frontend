@@ -59,20 +59,20 @@ const Detail: React.FunctionComponent<Props> = ({ id }) => {
 export default Detail;
 
 const Container = styled.div`
-  display: grid;
-  grid-gap: 2rem;
-  padding: 1rem 2rem;
-
   > h1 {
+    background: ${props => props.theme.colors.gray};
     text-transform: uppercase;
     font-weight: 700;
     color: ${props => props.theme.colors.accent};
     text-align: center;
+    padding: 1.5rem;
+    box-shadow: ${props => props.theme.shadows.soft};
   }
 
   > .info {
     display: grid;
     grid-gap: 5px;
+    padding: 2rem;
 
     > p > span {
       color: ${props => props.theme.colors.accent};

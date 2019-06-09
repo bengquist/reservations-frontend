@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { ReactNode, useRef } from "react";
 import useOutsideClick from "use-onclickoutside";
+import { fadeIn } from "../styles/animation";
 
 type Props = {
   children: ReactNode;
@@ -35,6 +36,7 @@ const Container = styled.div`
   align-items: center;
 
   background: rgb(0, 0, 0, 0.5);
+  animation: ${fadeIn} 0.2s ease-in;
 `;
 
 const Panel = styled.div`
@@ -42,6 +44,6 @@ const Panel = styled.div`
   width: 100%;
   max-width: 500px;
   margin: 1rem;
-  padding: 1rem;
   border-radius: 5px;
+  overflow: hidden;
 `;

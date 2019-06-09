@@ -16,7 +16,7 @@ const Detail: React.FunctionComponent<Props> = ({ id }) => {
   return (
     <Query<Data> query={RESERVATION_QUERY} variables={{ id }}>
       {({ data }) => {
-        if (!data) return null;
+        if (!data || !data.reservation) return null;
 
         const {
           name,

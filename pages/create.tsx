@@ -67,6 +67,7 @@ function CreatePage() {
             <Form onSubmit={preventDefault(submitHandler)}>
               <Section
                 label="Reservation Name:"
+                placeholder="Blake"
                 value={inputValues.name}
                 setValue={(value: string) =>
                   setInputValues(values => {
@@ -76,6 +77,7 @@ function CreatePage() {
               />
               <Section
                 label="Hotel:"
+                placeholder="Hampton Inn & Suites Dallas Downtown"
                 value={inputValues.hotelName}
                 setValue={(value: string) =>
                   setInputValues(values => {
@@ -85,6 +87,7 @@ function CreatePage() {
               />
               <Section
                 label="Arrival Date:"
+                placeholder="06/10/2019"
                 value={inputValues.arrivalDate}
                 setValue={(value: string) =>
                   setInputValues(values => {
@@ -94,6 +97,7 @@ function CreatePage() {
               />
               <Section
                 label="Departure Date:"
+                placeholder="06/11/2019"
                 value={inputValues.departureDate}
                 setValue={(value: string) =>
                   setInputValues(values => {

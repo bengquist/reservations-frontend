@@ -16,7 +16,7 @@ const Modal: React.FunctionComponent<Props> = ({ children, onClose }) => {
 
   return (
     <Container>
-      <div ref={containerRef}>{children}</div>
+      <Panel ref={containerRef}>{children}</Panel>
     </Container>
   );
 };
@@ -35,4 +35,10 @@ const Container = styled.div`
   align-items: center;
 
   background: rgb(0, 0, 0, 0.5);
+`;
+
+const Panel = styled.div`
+  background: white;
+  width: 100%;
+  max-width: 800px;
 `;

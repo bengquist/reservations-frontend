@@ -40,5 +40,8 @@ const Container = styled.div`
 const Panel = styled.div`
   background: white;
   width: 100%;
-  max-width: 800px;
+  max-width: 500px;
+  margin: 1rem;
+  padding: 1rem;
+  border-radius: 5px;
 `;

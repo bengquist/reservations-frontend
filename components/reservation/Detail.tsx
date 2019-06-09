@@ -1,6 +1,7 @@
 import gql from "graphql-tag";
-import styled from "styled-components";
 import { Query } from "react-apollo";
+import styled from "styled-components";
+import { formatDate } from "../../lib/formatHelpers";
 
 type Props = {
   id: string;
@@ -19,14 +20,39 @@ export const RESERVATION_QUERY = gql`
 `;
 
 const Detail: React.FunctionComponent<Props> = ({ id }) => {
+  console.log(id);
+
   return (
     <Query query={RESERVATION_QUERY} variables={{ id }}>
       {({ data, loading }) => {
         if (loading) return null;
+        const {
+          name,
+          hotelName,
+          arrivalDate,
+          departureDate
+        } = data.reservation;
 
-        console.log(data);
-
-        return <Container>yo</Container>;
+        return (
+          <Container>
+            <h1>Reservation</h1>
+            <div className="info">
+              <p>
+                <span>Name: </span>
+                {name}
+              </p>
+              <p>
+                <span>Hotel Name: </span> {hotelName}
+              </p>
+              <p>
+                <span>Arrival Date: </span> {formatDate(arrivalDate)}
+              </p>
+              <p>
+                <span>Departure Date: </span> {formatDate(departureDate)}
+              </p>
+            </div>
+          </Container>
+        );
       }}
     </Query>
   );
@@ -34,4 +60,25 @@ const Detail: React.FunctionComponent<Props> = ({ id }) => {
 
 export default Detail;
 
-const Container = styled.div``;
+const Container = styled.div`
+  display: grid;
+  grid-gap: 2rem;
+  padding: 1rem 2rem;
+
+  > h1 {
+    text-transform: uppercase;
+    font-weight: 700;
+    color: ${props => props.theme.colors.accent};
+    text-align: center;
+  }
+
+  > .info {
+    display: grid;
+    grid-gap: 5px;
+
+    > p > span {
+      color: ${props => props.theme.colors.accent};
+      font-weight: 700;
+    }
+  }
+`;

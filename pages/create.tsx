@@ -5,9 +5,11 @@ import Button from "../components/ui/Button";
 import Link from "next/link";
 import styled, { css } from "styled-components";
 import Section from "../components/ui/Section";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { preventDefault } from "../lib/eventHelpers";
+import isEqual from "lodash/isEqual";
 import { RESERVATIONS_QUERY } from ".";
+import { isValidDate } from "../lib/common";
 
 export const RESERVATION_MUTATION = gql`
   mutation RESERVATION_MUTATION(
@@ -36,7 +38,8 @@ function CreatePage() {
     name: "",
     hotelName: "",
     arrivalDate: "",
-    departureDate: ""
+    departureDate: "",
+    errorMessage: ""
   };
 
   const updateReservations = (cache, { data: { addReservation } }) => {
@@ -48,7 +51,12 @@ function CreatePage() {
   };
 
   const [inputValues, setInputValues] = useState(defaultValues);
+  const [errorMessage, setErrorMessage] = useState();
   const { name, hotelName, arrivalDate, departureDate } = inputValues;
+
+  useEffect(() => {
+    setErrorMessage("");
+  }, [inputValues]);
 
   return (
     <Mutation
@@ -56,11 +64,20 @@ function CreatePage() {
       variables={{ name, hotelName, arrivalDate, departureDate }}
       update={updateReservations}
     >
-      {(addReservation, { loading, data }) => {
+      {(addReservation, { loading, data, error }) => {
+        const validDates =
+          isValidDate(arrivalDate) && isValidDate(departureDate);
+
         const submitHandler = async () => {
+          if (!validDates) return setErrorMessage("Invalid Dates");
+
           await addReservation();
           setInputValues(defaultValues);
         };
+
+        if (error) console.log("error");
+
+        const isSubmitted = data && data.addReservation;
 
         return (
           <Layout title="Create Reservation">
@@ -77,7 +94,7 @@ function CreatePage() {
               />
               <Section
                 label="Hotel:"
-                placeholder="Hampton Inn & Suites Dallas Downtown"
+                placeholder="Hampton Inn & Suites"
                 value={inputValues.hotelName}
                 setValue={(value: string) =>
                   setInputValues(values => {
@@ -105,8 +122,10 @@ function CreatePage() {
                   })
                 }
               />
-              {data && data.addReservation && (
-                <Message>Reservation successfully added!</Message>
+              {(isSubmitted || errorMessage) && (
+                <Message style={{ background: errorMessage && "red" }}>
+                  {errorMessage || "Reservation successfully added!"}
+                </Message>
               )}
               <ButtonContainer>
                 <Link href="/">
@@ -115,7 +134,9 @@ function CreatePage() {
                     type="button"
                     css={secondaryStyles}
                   >
-                    Cancel
+                    {isSubmitted && isEqual(inputValues, defaultValues)
+                      ? "Home"
+                      : "Cancel"}
                   </Button>
                 </Link>
                 <Button type="submit">Submit</Button>

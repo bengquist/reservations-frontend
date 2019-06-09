@@ -79,7 +79,6 @@ function CreatePage() {
                 values={inputValues}
                 onInput={(value: any) =>
                   setInputValues(values => {
-                    console.log(value);
                     return { ...values, ...value };
                   })
                 }

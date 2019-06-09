@@ -8,9 +8,10 @@ import { Reservation } from "../components/reservation/types";
 import { RESERVATIONS_QUERY } from "../components/reservation/query";
 import { useState } from "react";
 import Input from "../components/ui/Input";
-import { grid } from "../components/styles/helpers";
 import { preventDefault } from "../lib/eventHelpers";
 import Spinner from "../components/ui/Spinner";
+import styled from "styled-components";
+import useMedia from "use-media";
 
 type Data = {
   reservations: Reservation[];
@@ -19,14 +20,12 @@ type Data = {
 function index() {
   const [searchValue, setSearchValue] = useState();
   const [query, setQuery] = useState();
+  const isMobile = useMedia("(max-width: 500px)");
 
   const options = (
     <>
       {/* probably needs its own component */}
-      <form
-        css={grid("1fr .25fr .25fr")}
-        onSubmit={preventDefault(() => setQuery(searchValue))}
-      >
+      <Form onSubmit={preventDefault(() => setQuery(searchValue))}>
         <Input
           autoFocus
           value={searchValue}
@@ -37,7 +36,8 @@ function index() {
           placeholder="Search name or hotel..."
         />
         <Button type="submit">Search</Button>
-        {searchValue && (
+
+        {!isMobile && (
           <Button
             type="button"
             style={{ background: "white", color: "black" }}
@@ -49,7 +49,7 @@ function index() {
             Clear
           </Button>
         )}
-      </form>
+      </Form>
       <Link href="/create">
         <Button>Create</Button>
       </Link>
@@ -77,3 +77,13 @@ function index() {
 }
 
 export default index;
+
+const Form = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 0.25fr 0.25fr;
+  grid-gap: 1rem;
+
+  @media (max-width: 500px) {
+    grid-template-columns: 1fr 0.5fr;
+  }
+`;

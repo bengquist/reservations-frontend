@@ -10,7 +10,6 @@ export const inputStyle = css`
   border-radius: 5px;
   transition: 0.2s;
   padding: 0.5rem;
-  min-width: 250px;
 
   :focus {
     border: none;

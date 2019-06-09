@@ -2,7 +2,6 @@ import Head from "next/head";
 import styled from "styled-components";
 import Header from "./Header";
 import { ReactNode } from "react";
-import Spinner from "./ui/Spinner";
 
 type Props = {
   title?: string;
@@ -47,7 +46,6 @@ const Container = styled.div`
   padding: 1rem;
 
   > .children-container {
-    width: 100%;
     display: grid;
     grid-gap: 2rem;
   }
@@ -58,8 +56,10 @@ const OptionsContainer = styled.div`
   justify-content: space-between;
 
   @media (max-width: 550px) {
-    display: grid;
-    grid-gap: 2rem;
-    justify-content: center;
+    flex-direction: column;
+
+    > :nth-child(1) {
+      margin-bottom: 1.75rem;
+    }
   }
 `;

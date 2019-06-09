@@ -33,5 +33,9 @@ const Container = styled.div`
     font-weight: 700;
     text-transform: uppercase;
     padding: 1.5rem 3rem;
+
+    @media (max-width: 500px) {
+      font-size: 2.5rem;
+    }
   }
 `;

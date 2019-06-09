@@ -1,5 +1,5 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Users\engqu\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add -D @types/next-with-apollo
+  C:\Program Files\nodejs\node.exe C:\Users\engqu\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add -D @types/use-media
 
 PATH: 
   C:\Users\engqu\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\local\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\engqu\bin;C:\Python27;C:\Python27\Scripts;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\WINDOWS\System32\OpenSSH;C:\Program Files\Git\cmd;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\WINDOWS\System32\OpenSSH;C:\Program Files\Redis;C:\ProgramData\chocolatey\bin;C:\Program Files\Java\jdk1.8.0_211\bin;C:\Program Files\nodejs;C:\Users\engqu\AppData\Local\Microsoft\WindowsApps;C:\mongo\bin;C:\Users\engqu\AppData\Local\Android\sdk\platform-tools;C:\Users\engqu\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\engqu\AppData\Local\Android\Sdk\platform-tools;C:\Users\engqu\AppData\Roaming\npm;C:\Program Files\Git\usr\bin\vendor_perl;C:\Program Files\Git\usr\bin\core_perl
@@ -14,7 +14,7 @@ Platform:
   win32 x64
 
 Trace: 
-  Error: https://registry.yarnpkg.com/@types%2fnext-with-apollo: Not found
+  Error: https://registry.yarnpkg.com/@types%2fuse-media: Not found
       at Request.params.callback [as _callback] (C:\Users\engqu\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:65894:18)
       at Request.self.callback (C:\Users\engqu\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:129018:22)
       at Request.emit (events.js:196:13)
@@ -35,7 +35,8 @@ npm manifest:
     "scripts": {
       "dev": "next",
       "build": "next build",
-      "start": "next start"
+      "now-build": "next build",
+      "start": "next start -p $PORT"
     },
     "dependencies": {
       "@types/graphql": "^14.2.0",
@@ -53,6 +54,7 @@ npm manifest:
       "react-dates": "^20.2.2",
       "react-dom": "^16.8.6",
       "styled-components": "^4.3.1",
+      "use-media": "^1.3.0",
       "use-onclickoutside": "^0.3.1"
     },
     "devDependencies": {
@@ -65,7 +67,8 @@ npm manifest:
       "@types/react-dom": "^16.8.4",
       "@types/styled-components": "^4.1.16",
       "@zeit/next-typescript": "^1.1.1",
-      "babel-plugin-styled-components": "^1.10.0"
+      "babel-plugin-styled-components": "^1.10.0",
+      "url-loader": "^2.0.0"
     }
   }
 
@@ -3520,7 +3523,7 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/mime/-/mime-1.4.1.tgz#121f9ebc49e3766f311a76e1fa1c8003c4b03aa6"
     integrity sha512-KI1+qOZu5DcW6wayYHSzR/tXKCDC5Om4s1z2QJjDULzLcmf3DvzS7oluY4HCTrc+9FiKmWUgeNLg7W3uIQvxtQ==
   
-  mime@^2.3.1:
+  mime@^2.0.3, mime@^2.3.1:
     version "2.4.4"
     resolved "https://registry.yarnpkg.com/mime/-/mime-2.4.4.tgz#bd7b91135fc6b01cde3e9bae33d659b63d8857e5"
     integrity sha512-LRxmNwziLPT828z+4YkNzloCFC2YM4wrB99k+AV5ZbEyfGNWfG8SO1FUXLmLDBSo89NrJZ4DIWeLjy1CHGhMGA==
@@ -5470,6 +5473,15 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/urix/-/urix-0.1.0.tgz#da937f7a62e21fec1fd18d49b35c2935067a6c72"
     integrity sha1-2pN/emLiH+wf0Y1Js1wpNQZ6bHI=
   
+  url-loader@^2.0.0:
+    version "2.0.0"
+    resolved "https://registry.yarnpkg.com/url-loader/-/url-loader-2.0.0.tgz#600ef36f463e21bd673ad70156d850619d9cd092"
+    integrity sha512-RT3cz+Lw+kFMCKLabMyogFrc/aRoAMJHmY5os1VDBlav+4t5vxUxKDn47zCSFAYAl+hM8YLg4TZwG4TkJaafkg==
+    dependencies:
+      loader-utils "^1.1.0"
+      mime "^2.0.3"
+      schema-utils "^1.0.0"
+  
   url@0.11.0, url@^0.11.0:
     version "0.11.0"
     resolved "https://registry.yarnpkg.com/url/-/url-0.11.0.tgz#3838e97cfc60521eb73c525a8e55bfdd9e2e28f1"
@@ -5482,6 +5494,11 @@ Lockfile:
     version "1.0.0"
     resolved "https://registry.yarnpkg.com/use-latest/-/use-latest-1.0.0.tgz#c86d2e4893b15f27def69da574a47136d107facb"
     integrity sha512-CxmFi75KTXeTIBlZq3LhJ4Hz98pCaRKZHCpnbiaEHIr5QnuHvH8lKYoluPBt/ik7j/hFVPB8K3WqF6mQvLyQTg==
+  
+  use-media@^1.3.0:
+    version "1.3.0"
+    resolved "https://registry.yarnpkg.com/use-media/-/use-media-1.3.0.tgz#be26102fd954c78895b4934744f977d2b23ecfbb"
+    integrity sha512-1JuB/QVAxCXsIsexSMTMZ34egbroSEjmvOVFbvGqLACruJcaH4wZjnUqqwQh/iVtbWi73LDCbfYJDsdyDfJe+g==
   
   use-onclickoutside@^0.3.1:
     version "0.3.1"

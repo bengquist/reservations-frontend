@@ -10,9 +10,9 @@ import { useState, useEffect } from "react";
 import { preventDefault } from "../lib/eventHelpers";
 import isEqual from "lodash/isEqual";
 import { RESERVATIONS_QUERY } from ".";
-import { isValidDate } from "../lib/common";
 import "react-datepicker/dist/react-datepicker-cssmodules.css";
 import { inputStyle } from "../components/ui/Input";
+import { format } from "date-fns";
 
 export const RESERVATION_MUTATION = gql`
   mutation RESERVATION_MUTATION(
@@ -65,16 +65,16 @@ function CreatePage() {
   return (
     <Mutation
       mutation={RESERVATION_MUTATION}
-      variables={{ name, hotelName, arrivalDate, departureDate }}
+      variables={{
+        name,
+        hotelName,
+        arrivalDate: format(arrivalDate, "MM/DD/YYYY"),
+        departureDate: format(departureDate, "MM/DD/YYYY")
+      }}
       update={updateReservations}
     >
       {(addReservation, { loading, data, error }) => {
-        const validDates =
-          isValidDate(arrivalDate) && isValidDate(departureDate);
-
         const submitHandler = async () => {
-          if (!validDates) return setErrorMessage("Invalid Dates");
-
           await addReservation();
           setInputValues(defaultValues);
         };
@@ -114,7 +114,7 @@ function CreatePage() {
                 <DatePicker
                   css={inputStyle}
                   selected={arrivalDate || Date.now()}
-                  onChange={(date: string) =>
+                  onChange={(date: Date) =>
                     setInputValues(values => {
                       return { ...values, arrivalDate: date };
                     })
@@ -128,7 +128,7 @@ function CreatePage() {
               >
                 <DatePicker
                   css={inputStyle}
-                  selected={arrivalDate || Date.now() + 24 * 60 * 60 * 1000}
+                  selected={departureDate || Date.now() + 24 * 60 * 60 * 1000}
                   onChange={(date: string) =>
                     setInputValues(values => {
                       return { ...values, departureDate: date };

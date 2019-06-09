@@ -11,10 +11,10 @@ const Sorter = () => {
         <p>Hotel Name</p>
       </button>
       <button>
-        <p>Hotel Name</p>
+        <p>Arrival Date</p>
       </button>
       <button>
-        <p>Hotel Name</p>
+        <p>Departure Date</p>
       </button>
     </Container>
   );

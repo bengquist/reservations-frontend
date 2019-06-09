@@ -1,6 +1,7 @@
 import { Reservation } from "./types";
 import styled, { css } from "styled-components";
 import { hoverState, focusState } from "../styles/helpers";
+import { formatDate } from "../../lib/formatHelpers";
 
 type Props = {
   reservation: Reservation;
@@ -12,8 +13,8 @@ const Card: React.FunctionComponent<Props> = ({ reservation }) => {
       <Container>
         <span>{reservation.name}</span>
         <span>{reservation.hotelName}</span>
-        <span className="date">{reservation.arrivalDate}</span>
-        <span className="date">{reservation.departureDate}</span>
+        <span className="date">{formatDate(reservation.arrivalDate)}</span>
+        <span className="date">{formatDate(reservation.departureDate)}</span>
       </Container>
     </button>
   );

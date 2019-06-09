@@ -11,10 +11,10 @@ import { RESERVATIONS_QUERY } from ".";
 
 export const RESERVATION_MUTATION = gql`
   mutation RESERVATION_MUTATION(
-    $name: String
-    $hotelName: String
-    $arrivalDate: String
-    $departureDate: String
+    $name: String!
+    $hotelName: String!
+    $arrivalDate: String!
+    $departureDate: String!
   ) {
     addReservation(
       name: $name
@@ -57,11 +57,14 @@ function CreatePage() {
       update={updateReservations}
     >
       {(addReservation, { loading, data }) => {
-        console.log(data);
+        const submitHandler = async () => {
+          await addReservation();
+          setInputValues(defaultValues);
+        };
 
         return (
           <Layout title="Create Reservation">
-            <Form onSubmit={preventDefault(async () => await addReservation())}>
+            <Form onSubmit={preventDefault(submitHandler)}>
               <Section
                 label="Reservation Name:"
                 value={inputValues.name}
@@ -98,6 +101,9 @@ function CreatePage() {
                   })
                 }
               />
+              {data && data.addReservation && (
+                <Message>Reservation successfully added!</Message>
+              )}
               <ButtonContainer>
                 <Link href="/">
                   <Button
@@ -151,4 +157,14 @@ const secondaryStyles = css`
   :focus {
     color: white;
   }
+`;
+
+const Message = styled.label`
+  background: ${props => props.theme.colors.accent};
+  grid-column: 1/3;
+  grid-row: 3;
+  color: white;
+  border-radius: 5px;
+  padding: 5px 20px;
+  margin: 0 auto;
 `;

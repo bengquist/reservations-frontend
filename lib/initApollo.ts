@@ -8,7 +8,7 @@ function create(initialState: any) {
     connectToDevTools: process.browser,
     ssrMode: !process.browser,
     link: new HttpLink({
-      uri: "https://reservations-backend.bengquist.now.sh/graphql",
+      uri: "http://localhost:4000/graphql",
       credentials: "same-origin",
       fetch: !process.browser && fetch
     }),

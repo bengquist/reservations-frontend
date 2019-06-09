@@ -48,4 +48,10 @@ const Container = styled.div`
 const OptionsContainer = styled.div`
   display: flex;
   justify-content: space-between;
+
+  @media (max-width: 550px) {
+    display: grid;
+    grid-gap: 10px;
+    justify-content: center;
+  }
 `;

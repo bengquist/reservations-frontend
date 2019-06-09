@@ -8,8 +8,8 @@ import { useState } from "react";
 import Link from "next/link";
 import Button from "../components/ui/Button";
 
-export const getReservations = gql`
-  query getReservations {
+export const RESERVATIONS_QUERY = gql`
+  query RESERVATIONS_QUERY {
     reservations {
       name
       hotelName
@@ -33,7 +33,7 @@ function index() {
   );
 
   return (
-    <Query query={getReservations}>
+    <Query query={RESERVATIONS_QUERY}>
       {({ data, loading }) => {
         if (loading) return null;
 

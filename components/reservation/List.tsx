@@ -8,7 +8,7 @@ type Props = {
 
 const List: React.FunctionComponent<Props> = ({ reservations }) => {
   const renderReservation = (reservation: Reservation) => {
-    return <Card reservation={reservation} />;
+    return <Card key={reservation.id} reservation={reservation} />;
   };
 
   return <CardsContainer>{reservations.map(renderReservation)}</CardsContainer>;

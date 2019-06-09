@@ -16,7 +16,11 @@ const Header: React.FunctionComponent<Props> = ({ children }) => {
 export default Header;
 
 const Container = styled.div`
-  background: ${props => props.theme.colors.secondary};
+  background-image: linear-gradient(
+    to top,
+    ${props => props.theme.colors.accent},
+    ${props => props.theme.colors.secondary}
+  );
   color: white;
   width: 100%;
   border-radius: 5px;

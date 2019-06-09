@@ -50,6 +50,8 @@ export const GlobalStyle = createGlobalStyle`
   button {
     background: none;
     border: none;
+    box-shadow: 0 0 0 1pt rgb(0, 0, 0, 0.3);
+    
     :hover {
       cursor: pointer;
     }

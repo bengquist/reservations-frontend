@@ -1,8 +1,8 @@
 import gql from "graphql-tag";
 
 export const RESERVATIONS_QUERY = gql`
-  query RESERVATIONS_QUERY {
-    reservations {
+  query RESERVATIONS_QUERY($query: String) {
+    reservations(query: $query) {
       name
       hotelName
       arrivalDate

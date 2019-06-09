@@ -22,3 +22,10 @@ export const flexSpaceBetween = css`
   display: flex;
   justify-content: space-between;
 `;
+
+export const grid = (columns: string = "1fr", gap: number = 1) =>
+  css`
+    display: grid;
+    grid-template-columns: ${columns};
+    grid-gap: ${gap}rem;
+  `;

@@ -2,6 +2,7 @@ import Head from "next/head";
 import styled from "styled-components";
 import Header from "./Header";
 import { ReactNode } from "react";
+import Spinner from "./ui/Spinner";
 
 type Props = {
   title?: string;
@@ -14,11 +15,8 @@ const Layout: React.FunctionComponent<Props> = ({
   children,
   title = "Reservations",
   description,
-  loading,
   options
 }) => {
-  if (loading) return <h1>Loading...</h1>;
-
   return (
     <Container>
       <Head>

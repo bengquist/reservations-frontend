@@ -22,9 +22,9 @@ class MyApp extends App<any> {
 
     return (
       <Container>
+        <GlobalStyle />
         <ThemeProvider theme={theme}>
           <ApolloProvider client={apolloClient}>
-            <GlobalStyle />
             <Component {...pageProps} />
           </ApolloProvider>
         </ThemeProvider>

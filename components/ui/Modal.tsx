@@ -43,6 +43,7 @@ const Panel = styled.div`
   background: white;
   width: 100%;
   max-width: 500px;
+
   margin: 1rem;
   border-radius: 5px;
   overflow: hidden;

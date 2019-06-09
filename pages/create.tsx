@@ -19,6 +19,7 @@ import {
 import { RESERVATION_MUTATION } from "../components/reservation/mutation";
 import { RESERVATIONS_QUERY } from "../components/reservation/query";
 import { format } from "date-fns";
+import "react-datepicker/dist/react-datepicker-cssmodules.css";
 
 type Data = {
   addReservation: Reservation[];

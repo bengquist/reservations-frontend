@@ -47,6 +47,7 @@ const Container = styled.div`
   padding: 1rem;
 
   > .children-container {
+    width: 100%;
     display: grid;
     grid-gap: 2rem;
   }

@@ -45,7 +45,7 @@ const Container = styled.div`
   align-items: center;
   width: 100vw;
   max-width: 1000px;
-  margin: 0 auto;
+  margin: 2rem auto;
 
   > .children-container {
     width: 100%;

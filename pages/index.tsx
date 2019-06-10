@@ -18,13 +18,13 @@ type Data = {
 };
 
 function index() {
-  const [searchValue, setSearchValue] = useState();
-  const [query, setQuery] = useState();
+  const [searchValue, setSearchValue] = useState("");
+  const [query, setQuery] = useState("");
   const isMobile = useMedia("(max-width: 500px)");
 
   const options = (
+    // this probably needs its own component
     <>
-      {/* probably needs its own component */}
       <Form onSubmit={preventDefault(() => setQuery(searchValue))}>
         <Input
           autoFocus
@@ -63,9 +63,9 @@ function index() {
 
         return (
           <Layout
+            options={options}
             title="Reservations"
             description="Look at all of these awesome reservations!"
-            options={options}
           >
             <Sorter />
             {loading ? <Spinner /> : <List reservations={data.reservations} />}
@@ -78,7 +78,7 @@ function index() {
 
 export default index;
 
-const Form = styled.div`
+const Form = styled.form`
   display: grid;
   grid-template-columns: 1fr 0.25fr 0.25fr;
   grid-gap: 1rem;

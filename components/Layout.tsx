@@ -26,10 +26,12 @@ const Layout: React.FunctionComponent<Props> = ({
         <meta name="description" content={description} />
       </Head>
       <Header>{title}</Header>
-      <div className="children-container">
-        <OptionsContainer>{options}</OptionsContainer>
-        {children}
-      </div>
+      {
+        <div className="children-container">
+          {options && <OptionsContainer>{options}</OptionsContainer>}
+          {children}
+        </div>
+      }
     </Container>
   );
 };
@@ -44,12 +46,15 @@ const Container = styled.div`
   width: 100vw;
   max-width: 1000px;
   margin: 0 auto;
-  padding: 1rem;
 
   > .children-container {
     width: 100%;
     display: grid;
     grid-gap: 2rem;
+
+     > * {
+       margin 0 1rem;
+     }
   }
 `;
 

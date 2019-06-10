@@ -25,7 +25,6 @@ export default Sorter;
 const Container = styled.div`
   background: ${props => props.theme.colors && props.theme.colors.gray};
   box-shadow: ${props => props.theme.shadows && props.theme.shadows.soft};
-  width: 100%;
   border-radius: 0.5rem;
   overflow: hidden;
 

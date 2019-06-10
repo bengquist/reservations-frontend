@@ -4,10 +4,12 @@ export const GlobalStyle = createGlobalStyle`
   html {
     font-size: 10px;
     background: rgba(247, 247, 247, 1);
+    height: 100vh;
   }
   body {
     font-size: 1.5rem;
     height: 100vh;
+    position: relative;
   }
   :root {
     --step-up-5: 2em;

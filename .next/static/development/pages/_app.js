@@ -15,7 +15,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function _templateObject() {
-  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  html {\n    font-size: 10px;\n    background: rgba(247, 247, 247, 1);\n  }\n  body {\n    font-size: 1.5rem;\n    height: 100vh;\n  }\n  :root {\n    --step-up-5: 2em;\n    --step-up-4: 1.7511em;\n    --step-up-3: 1.5157em;\n    --step-up-2: 1.3195em;\n    --step-up-1: 1.1487em;\n    /* baseline: 1em */\n    --step-down-1: 0.8706em;\n    --step-down-2: 0.7579em;\n    --step-down-3: 0.6599em;\n    --step-down-4: 0.5745em;\n    --step-down-5: 0.5em;\n    /* Colors */\n    --header: rgb(0,0,0);\n  }\n  @font-face {\n    font-family: 'pt-sans';\n    src: url('/static/PT_Sans-Web-Regular.woff')\n    format('woff2');\n    font-weight: normal; \n    font-style: normal;\n  }\n  @font-face {\n    font-family: 'pt-sans';\n    src: url('/static/PT_Sans-Web-Bold.woff')\n    format('woff2');\n    font-weight: bold; \n    font-style: normal;\n  }\n  body, h1, h2, h3, h4, h5, h6, p, ol, ul, input[type=text], input[type=email], button {\n    margin: 0;\n    padding: 0;\n    font-weight: 500;\n    font-family: \"pt-sans\"\n  }\n  *, *:before, *:after {\n    box-sizing: inherit;\n  }\n  ol, ul {\n    list-style: none;\n  }\n  img {\n    max-width: 100%;\n    height: auto;\n  }\n  button {\n    background: none;\n    border: none;\n    box-shadow: 0 0 0 1pt rgb(0, 0, 0, 0.3);\n\n    :hover {\n      cursor: pointer;\n    }\n    :focus {\n      outline: none;\n    }\n  }\n  input {\n    border: none;\n    box-shadow: 0 0 0 1pt rgb(0, 0, 0, 0.3);\n  }\n  /* Links */\n  a {\n    text-decoration: none;\n    color: inherit;\n  &.active {\n      text-decoration: none;\n    }\n  }\n"]);
+  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  html {\n    font-size: 10px;\n    background: rgba(247, 247, 247, 1);\n    height: 100vh;\n  }\n  body {\n    font-size: 1.5rem;\n    height: 100vh;\n    position: relative;\n  }\n  :root {\n    --step-up-5: 2em;\n    --step-up-4: 1.7511em;\n    --step-up-3: 1.5157em;\n    --step-up-2: 1.3195em;\n    --step-up-1: 1.1487em;\n    /* baseline: 1em */\n    --step-down-1: 0.8706em;\n    --step-down-2: 0.7579em;\n    --step-down-3: 0.6599em;\n    --step-down-4: 0.5745em;\n    --step-down-5: 0.5em;\n    /* Colors */\n    --header: rgb(0,0,0);\n  }\n  @font-face {\n    font-family: 'pt-sans';\n    src: url('/static/PT_Sans-Web-Regular.woff')\n    format('woff2');\n    font-weight: normal; \n    font-style: normal;\n  }\n  @font-face {\n    font-family: 'pt-sans';\n    src: url('/static/PT_Sans-Web-Bold.woff')\n    format('woff2');\n    font-weight: bold; \n    font-style: normal;\n  }\n  body, h1, h2, h3, h4, h5, h6, p, ol, ul, input[type=text], input[type=email], button {\n    margin: 0;\n    padding: 0;\n    font-weight: 500;\n    font-family: \"pt-sans\"\n  }\n  *, *:before, *:after {\n    box-sizing: inherit;\n  }\n  ol, ul {\n    list-style: none;\n  }\n  img {\n    max-width: 100%;\n    height: auto;\n  }\n  button {\n    background: none;\n    border: none;\n    box-shadow: 0 0 0 1pt rgb(0, 0, 0, 0.3);\n\n    :hover {\n      cursor: pointer;\n    }\n    :focus {\n      outline: none;\n    }\n  }\n  input {\n    border: none;\n    box-shadow: 0 0 0 1pt rgb(0, 0, 0, 0.3);\n  }\n  /* Links */\n  a {\n    text-decoration: none;\n    color: inherit;\n  &.active {\n      text-decoration: none;\n    }\n  }\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -132,7 +132,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "C:\\Users\\engqu\\Desktop\\projects\\Personal\\reservations-frontend\\lib\\withApollo.ts";
+var _jsxFileName = "C:\\Users\\engqu\\Desktop\\projects\\Personal\\reservations-client\\lib\\withApollo.ts";
 
 
 
@@ -1793,7 +1793,7 @@ function previouslyCompared(a, b) {
 /*!*****************************************************!*\
   !*** ./node_modules/apollo-boost/lib/bundle.esm.js ***!
   \*****************************************************/
-/*! exports provided: ApolloClient, ApolloError, FetchType, NetworkStatus, ObservableQuery, isApolloError, HttpLink, gql, default, Observable, getOperationName, createOperation, makePromise, toPromise, fromPromise, fromError, empty, from, split, concat, ApolloLink, execute, HeuristicFragmentMatcher, InMemoryCache, IntrospectionFragmentMatcher, ObjectCache, StoreReader, StoreWriter, WriteError, assertIdValue, defaultDataIdFromObject, defaultNormalizedCacheFactory, enhanceErrorWithDocument */
+/*! exports provided: ApolloClient, ApolloError, FetchType, NetworkStatus, ObservableQuery, isApolloError, Observable, getOperationName, createOperation, makePromise, toPromise, fromPromise, fromError, empty, from, split, concat, ApolloLink, execute, HeuristicFragmentMatcher, InMemoryCache, IntrospectionFragmentMatcher, ObjectCache, StoreReader, StoreWriter, WriteError, assertIdValue, defaultDataIdFromObject, defaultNormalizedCacheFactory, enhanceErrorWithDocument, HttpLink, gql, default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -32765,7 +32765,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "C:\\Users\\engqu\\Desktop\\projects\\Personal\\reservations-frontend\\pages\\_app.tsx";
+var _jsxFileName = "C:\\Users\\engqu\\Desktop\\projects\\Personal\\reservations-client\\pages\\_app.tsx";
 
 
 

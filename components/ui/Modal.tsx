@@ -11,7 +11,7 @@ type Props = {
 const Modal: React.FunctionComponent<Props> = ({ children, onClose }) => {
   const containerRef = useRef<HTMLDivElement>(null);
 
-  useOutsideClick(containerRef, () => {
+  useOutsideClick(containerRef, e => {
     onClose();
   });
 
@@ -30,6 +30,7 @@ const Container = styled.div`
   bottom: 0;
   left: 0;
   right: 0;
+  z-index: 1;
 
   display: flex;
   justify-content: center;

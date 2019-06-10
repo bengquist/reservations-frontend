@@ -27,7 +27,6 @@ function index() {
     <>
       <Form onSubmit={preventDefault(() => setQuery(searchValue))}>
         <Input
-          autoFocus
           value={searchValue}
           onChange={e => {
             setSearchValue(e.target.value);

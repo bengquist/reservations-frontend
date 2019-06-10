@@ -55,7 +55,7 @@ export default Create;
 const DateContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-gap: 1.5rem;
+  grid-gap: 2rem;
 
   @media (max-width: 500px) {
     grid-template-columns: 1fr;

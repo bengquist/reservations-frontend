@@ -38,10 +38,14 @@ export default Section;
 
 const Container = styled.div`
   display: grid;
-  grid-gap: 5px;
+  grid-gap: 0.5rem;
 
+  .react-datepicker__input-container {
+    display: flex;
+  }
   .react-datepicker__input-container input {
     ${inputStyle};
+    width: 100%;
   }
 `;
 

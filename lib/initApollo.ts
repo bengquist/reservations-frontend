@@ -8,7 +8,7 @@ function create(initialState: any) {
     connectToDevTools: process.browser,
     ssrMode: !process.browser,
     link: new HttpLink({
-      uri: "http://localhost:4000/graphql",
+      uri: "https://reservations-backend.herokuapp.com/graphql",
       credentials: "same-origin",
       fetch: !process.browser && fetch
     }),

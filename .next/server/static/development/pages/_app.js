@@ -230,7 +230,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "C:\\Users\\engqu\\Desktop\\projects\\Personal\\reservations-client\\lib\\withApollo.ts";
+var _jsxFileName = "C:\\Users\\engqu\\Desktop\\projects\\Personal\\reservations-frontend\\lib\\withApollo.ts";
 
 
 
@@ -1395,7 +1395,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "C:\\Users\\engqu\\Desktop\\projects\\Personal\\reservations-client\\pages\\_app.tsx";
+var _jsxFileName = "C:\\Users\\engqu\\Desktop\\projects\\Personal\\reservations-frontend\\pages\\_app.tsx";
 
 
 

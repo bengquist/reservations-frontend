@@ -2295,7 +2295,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "C:\\Users\\engqu\\Desktop\\projects\\Personal\\reservations-client\\pages\\_document.tsx";
+var _jsxFileName = "C:\\Users\\engqu\\Desktop\\projects\\Personal\\reservations-frontend\\pages\\_document.tsx";
 
 
 

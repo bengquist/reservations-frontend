@@ -6671,7 +6671,7 @@ function connect(options) {
       error.name = err.name;
       error.stack = err.stack; // __NEXT_DIST_DIR is provided by webpack
 
-      source_map_support_1.rewriteStacktrace(error, "C:\\Users\\engqu\\Desktop\\projects\\Personal\\reservations-client\\.next");
+      source_map_support_1.rewriteStacktrace(error, "C:\\Users\\engqu\\Desktop\\projects\\Personal\\reservations-frontend\\.next");
       return error;
     }
   };

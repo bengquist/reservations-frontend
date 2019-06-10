@@ -40,6 +40,18 @@ const Container = styled.div`
   display: grid;
   grid-gap: 0.5rem;
 
+  .react-datepicker .react-datepicker__day-names {
+    margin-top: 1rem;
+  }
+
+  .react-datepicker .react-datepicker__header {
+    background: ${props => props.theme.colors.primary};
+  }
+
+  .react-datepicker button {
+    box-shadow: none;
+  }
+
   .react-datepicker__input-container {
     display: flex;
   }

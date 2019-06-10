@@ -45,24 +45,24 @@ const Shade = styled.div`
 const Container = styled.div`
   display: flex;
   flex-direction: column;
+  width: 100%;
+  max-width: 500px;
+
+  > * {
+    margin: 0.5rem 1rem;
+  }
 `;
 
 const Panel = styled.div`
   background: white;
-  width: 100%;
-  max-width: 500px;
   border-radius: 5px;
   overflow: hidden;
-
-  @media (max-width: 500px) {
-    max-width: 300px;
-  }
 `;
 
 const CloseButton = styled.button`
   font-size: 4rem;
   color: ${props => props.theme.colors.gray};
   box-shadow: none;
-  height: 4.5rem;
+  height: 4rem;
   align-self: flex-end;
 `;

@@ -21,7 +21,10 @@ const Layout: React.FunctionComponent<Props> = ({
       <Head>
         <title>{title}</title>
         <meta charSet="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+        />
         <meta name="title" content={title} />
         <meta name="description" content={description} />
       </Head>

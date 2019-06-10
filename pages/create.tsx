@@ -4,7 +4,6 @@ import Button from "../components/ui/Button";
 import Link from "next/link";
 import { useState } from "react";
 import { preventDefault } from "../lib/eventHelpers";
-import isEqual from "lodash/isEqual";
 import Fields from "../components/reservation/Fields";
 import {
   Reservation,
@@ -66,8 +65,7 @@ function CreatePage() {
           setInputValues(defaultValues);
         };
 
-        const isSubmitted =
-          data && data.addReservation && isEqual(inputValues, defaultValues);
+        const isSubmitted = data && data.addReservation;
         const message = isSubmitted && (
           <Message>Reservation successfully added!</Message>
         );
@@ -87,7 +85,7 @@ function CreatePage() {
               <ButtonContainer>
                 <Link href="/">
                   <Button type="button" css={secondaryStyles}>
-                    Cancel
+                    {isSubmitted ? "Go Home" : "Cancel"}
                   </Button>
                 </Link>
                 <Button type="submit">Submit</Button>

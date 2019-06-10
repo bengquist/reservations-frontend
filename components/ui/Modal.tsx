@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import { ReactNode } from "react";
+import { ReactNode, useRef } from "react";
 import { fadeIn } from "../styles/animation";
-import OutsideClickHandler from "react-outside-click-handler";
+import { useClickAway } from "../../lib/hooks";
 
 type Props = {
   children: ReactNode;
@@ -9,15 +9,13 @@ type Props = {
 };
 
 const Modal: React.FunctionComponent<Props> = ({ children, onClose }) => {
+  const ref = useRef<HTMLDivElement>(null);
+
+  useClickAway(onClose, ref);
+
   return (
     <Container>
-      <OutsideClickHandler
-        onOutsideClick={() => {
-          onClose();
-        }}
-      >
-        <Panel>{children}</Panel>
-      </OutsideClickHandler>
+      <Panel ref={ref}>{children}</Panel>
     </Container>
   );
 };

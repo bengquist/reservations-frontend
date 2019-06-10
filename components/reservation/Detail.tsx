@@ -53,10 +53,10 @@ export default Detail;
 
 const Container = styled.div`
   > h1 {
-    background: ${props => props.theme.colors && props.theme.colors.gray};
+    background: ${props => props.theme.colors.gray};
     text-transform: uppercase;
     font-weight: 700;
-    color: ${props => props.theme.colors && props.theme.colors.accent};
+    color: ${props => props.theme.colors.accent};
     text-align: center;
     padding: 1.5rem;
     box-shadow: ${props => props.theme.shadows && props.theme.shadows.soft};
@@ -68,7 +68,7 @@ const Container = styled.div`
     padding: 2rem;
 
     > p > span {
-      color: ${props => props.theme.colors && props.theme.colors.accent};
+      color: ${props => props.theme.colors.accent};
       font-weight: 700;
     }
   }

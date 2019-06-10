@@ -23,7 +23,7 @@ const Sorter = () => {
 export default Sorter;
 
 const Container = styled.div`
-  background: ${props => props.theme.colors && props.theme.colors.gray};
+  background: ${props => props.theme.colors.gray};
   box-shadow: ${props => props.theme.shadows && props.theme.shadows.soft};
   border-radius: 0.5rem;
   overflow: hidden;
@@ -33,15 +33,14 @@ const Container = styled.div`
   justify-items: center;
 
   > button {
-    color: ${props => props.theme.colors && props.theme.colors.accent};
+    color: ${props => props.theme.colors.accent};
     width: 100%;
     transition: 0.2s;
     :hover {
       opacity: 0.7;
     }
     :focus {
-      background: ${props =>
-        props.theme.colors && props.theme.colors.secondary};
+      background: ${props => props.theme.colors.secondary};
       color: white;
     }
   }

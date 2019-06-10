@@ -13,7 +13,6 @@ export const inputStyle = css`
 
   :focus {
     border: none;
-    box-shadow: 0 0 0 1pt
-      ${props => props.theme.colors && props.theme.colors.secondary};
+    box-shadow: 0 0 0 1pt ${props => props.theme.colors.secondary};
   }
 `;

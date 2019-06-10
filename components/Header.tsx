@@ -18,8 +18,8 @@ export default Header;
 const Container = styled.div`
   background-image: linear-gradient(
     to top,
-    ${props => props.theme.colors && props.theme.colors.accent},
-    ${props => props.theme.colors && props.theme.colors.secondary}
+    ${props => props.theme.colors.accent},
+    ${props => props.theme.colors.secondary}
   );
   color: white;
   width: 100%;

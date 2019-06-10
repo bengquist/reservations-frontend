@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import { ReactNode, useRef } from "react";
-import useOutsideClick from "use-onclickoutside";
+import { ReactNode } from "react";
 import { fadeIn } from "../styles/animation";
+import OutsideClickHandler from "react-outside-click-handler";
 
 type Props = {
   children: ReactNode;
@@ -9,15 +9,15 @@ type Props = {
 };
 
 const Modal: React.FunctionComponent<Props> = ({ children, onClose }) => {
-  const containerRef = useRef<HTMLDivElement>(null);
-
-  useOutsideClick(containerRef, e => {
-    onClose();
-  });
-
   return (
     <Container>
-      <Panel ref={containerRef}>{children}</Panel>
+      <OutsideClickHandler
+        onOutsideClick={() => {
+          onClose();
+        }}
+      >
+        <Panel>{children}</Panel>
+      </OutsideClickHandler>
     </Container>
   );
 };

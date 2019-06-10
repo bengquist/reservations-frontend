@@ -10,6 +10,7 @@ export const GlobalStyle = createGlobalStyle`
     font-size: 1.5rem;
     height: 100vh;
     position: relative;
+    overflow: auto;
   }
   :root {
     --step-up-5: 2em;

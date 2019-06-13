@@ -1,3 +1,4 @@
+import * as React from "react";
 import { Reservation } from "./types";
 import styled, { css } from "styled-components";
 import { hoverState, focusState } from "../styles/helpers";

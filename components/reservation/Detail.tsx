@@ -1,3 +1,4 @@
+import * as React from "react";
 import { Query } from "react-apollo";
 import styled from "styled-components";
 import { formatDate } from "../../lib/formatHelpers";

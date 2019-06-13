@@ -1,3 +1,4 @@
+import * as React from "react";
 import styled from "styled-components";
 import { ReactNode, useRef } from "react";
 import { fadeIn } from "../styles/animation";

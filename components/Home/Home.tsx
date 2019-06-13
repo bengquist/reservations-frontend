@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import * as React from "react";
 import { Reservation } from "../reservation/types";
 import useMedia from "use-media";
 import { preventDefault } from "../../lib/eventHelpers";
@@ -17,8 +17,8 @@ type Data = {
 };
 
 const Home = () => {
-  const [searchValue, setSearchValue] = useState("");
-  const [query, setQuery] = useState("");
+  const [searchValue, setSearchValue] = React.useState("");
+  const [query, setQuery] = React.useState("");
   const isMobile = useMedia("(max-width: 500px)");
 
   const options = (

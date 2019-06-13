@@ -7,7 +7,7 @@ describe("Pages", () => {
     it("should render without throwing an error", function() {
       const page = shallow(<CreatePage />);
 
-      console.log(page);
+      console.log(page.debug());
     });
   });
 });

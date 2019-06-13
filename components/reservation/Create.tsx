@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import * as React from "react";
 import { Reservation, ReservationUpdate } from "./types";
 import { RESERVATIONS_QUERY } from "./query";
 import { Mutation } from "react-apollo";
@@ -9,7 +9,7 @@ import { preventDefault } from "../../lib/eventHelpers";
 import Link from "next/link";
 import Button from "../ui/Button";
 import Fields from "./Fields";
-// import "react-datepicker/dist/react-datepicker-cssmodules.css";
+import "react-datepicker/dist/react-datepicker-cssmodules.css";
 
 type Data = {
   addReservation: Reservation[];
@@ -36,7 +36,7 @@ const Create = () => {
     });
   };
 
-  const [inputValues, setInputValues] = useState(defaultValues);
+  const [inputValues, setInputValues] = React.useState(defaultValues);
   const { name, hotelName, arrivalDate, departureDate } = inputValues;
 
   return (

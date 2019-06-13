@@ -1,3 +1,4 @@
+import * as React from "react";
 import Card from "./Card";
 import { Reservation } from "./types";
 import styled from "styled-components";

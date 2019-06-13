@@ -49,7 +49,7 @@ const Container = styled.div`
 
   > span {
     padding: 1rem 0.5rem;
-    border-right: 2px solid ${props => props.theme.colors.gray};
+    border-right: 2px solid #e8e8e8;
     :last-child {
       border-width: 1px 0 1px 1px;
     }

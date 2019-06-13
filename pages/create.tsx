@@ -1,3 +1,4 @@
+import * as React from "react";
 import Layout from "../components/Layout";
 import { Mutation } from "react-apollo";
 import Button from "../components/ui/Button";
@@ -19,6 +20,7 @@ import { RESERVATION_MUTATION } from "../components/reservation/mutation";
 import { RESERVATIONS_QUERY } from "../components/reservation/query";
 import { format } from "date-fns";
 import "react-datepicker/dist/react-datepicker-cssmodules.css";
+import {} from "styled-components/cssprop";
 
 type Data = {
   addReservation: Reservation[];
@@ -28,8 +30,8 @@ function CreatePage() {
   const defaultValues = {
     name: "",
     hotelName: "",
-    arrivalDate: Date.now(),
-    departureDate: Date.now() + 24 * 60 * 60 * 1000,
+    arrivalDate: new Date(),
+    departureDate: new Date(),
     errorMessage: ""
   };
 
@@ -59,7 +61,7 @@ function CreatePage() {
       }}
       update={updateReservations}
     >
-      {(addReservation, { loading, data }) => {
+      {(addReservation, { data }) => {
         const submitHandler = async () => {
           await addReservation();
           setInputValues(defaultValues);
@@ -84,11 +86,13 @@ function CreatePage() {
               {message}
               <ButtonContainer>
                 <Link href="/">
-                  <Button type="button" css={secondaryStyles}>
+                  <Button type="button">
                     {isSubmitted ? "Go Home" : "Cancel"}
                   </Button>
                 </Link>
-                <Button type="submit">Submit</Button>
+                <Button type="submit" css={secondaryStyles}>
+                  Submit
+                </Button>
               </ButtonContainer>
             </Form>
           </Layout>

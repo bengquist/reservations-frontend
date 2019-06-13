@@ -1,3 +1,4 @@
+import * as React from "react";
 import styled from "styled-components";
 import Input, { inputStyle } from "./Input";
 import { ReactNode } from "react";

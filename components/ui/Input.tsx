@@ -1,8 +1,11 @@
+import * as React from "react";
 import { css } from "styled-components";
 
-function Input(props) {
+const Input: React.FunctionComponent<
+  React.ComponentPropsWithoutRef<"input">
+> = props => {
   return <input css={inputStyle} {...props} />;
-}
+};
 
 export default Input;
 

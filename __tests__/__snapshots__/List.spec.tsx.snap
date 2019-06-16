@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Home renders and matches snapshot 1`] = `
+exports[`List renders and matches snapshot 1`] = `
 <styled.div>
   <Card
     key="95b80559-4904-4151-b35d-80f073a30206"

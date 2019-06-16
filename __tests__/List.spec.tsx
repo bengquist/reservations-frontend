@@ -5,11 +5,9 @@ import { mockReservationList } from "../lib/testUtil";
 import { RESERVATIONS_QUERY } from "../components/reservation/query";
 import { MockedProvider } from "react-apollo/test-utils";
 
-describe("Home", () => {
+describe("List", () => {
   it("renders and matches snapshot", () => {
     const wrapper = shallow(<List reservations={mockReservationList()} />);
-
-    console.log(wrapper.debug());
 
     expect(wrapper).toMatchSnapshot();
   });

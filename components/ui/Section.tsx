@@ -6,7 +6,7 @@ import { ReactNode } from "react";
 type Props = {
   label: string;
   placeholder?: string;
-  value?: string | Date;
+  value?: string | number;
   setValue?: (value: string) => void;
   children?: ReactNode;
 };
@@ -27,7 +27,7 @@ const Section: React.FunctionComponent<Props> = ({
           placeholder={placeholder}
           value={value}
           onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-            setValue(e.target.value)
+            setValue && setValue(e.target.value)
           }
         />
       )}

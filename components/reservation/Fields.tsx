@@ -16,7 +16,7 @@ type Props = {
   onInput: (value: any) => void;
 };
 
-const Create: React.FunctionComponent<Props> = ({ onInput, values }) => {
+const Fields: React.FunctionComponent<Props> = ({ onInput, values }) => {
   const { name, hotelName, arrivalDate, departureDate } = values;
 
   return (
@@ -34,13 +34,13 @@ const Create: React.FunctionComponent<Props> = ({ onInput, values }) => {
         setValue={(value: string) => onInput({ hotelName: value })}
       />
       <DateContainer>
-        <Section label="Arrival Date:" value={arrivalDate}>
+        <Section label="Arrival Date:" value={Number(arrivalDate)}>
           <DatePicker
             selected={arrivalDate}
             onChange={(value: Date) => onInput({ arrivalDate: value })}
           />
         </Section>
-        <Section label="Departure Date:" value={departureDate}>
+        <Section label="Departure Date:" value={Number(departureDate)}>
           <DatePicker
             selected={departureDate}
             onChange={(value: Date) => onInput({ departureDate: value })}
@@ -51,7 +51,7 @@ const Create: React.FunctionComponent<Props> = ({ onInput, values }) => {
   );
 };
 
-export default Create;
+export default Fields;
 
 const DateContainer = styled.div`
   display: grid;

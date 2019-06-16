@@ -78,9 +78,7 @@ const Create = () => {
                   {isSubmitted ? "Go Home" : "Cancel"}
                 </Button>
               </Link>
-              <Button type="submit" >
-                Submit
-              </Button>
+              <Button type="submit">Submit</Button>
             </ButtonContainer>
           </Form>
         );

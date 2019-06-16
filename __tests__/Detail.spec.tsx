@@ -1,11 +1,17 @@
 import * as React from "react";
-import { mount } from "enzyme";
+import { mount, shallow } from "enzyme";
 import { mockReservation } from "../lib/testUtil";
 import Detail from "../components/reservation/Detail";
 import { RESERVATION_QUERY } from "../components/reservation/query";
 import { MockedProvider } from "react-apollo/test-utils";
 
 describe("Detail", () => {
+  it("renders and matches snapshot", () => {
+    const wrapper = shallow(<Detail id={mockReservation().id} />);
+
+    expect(wrapper).toMatchSnapshot();
+  });
+
   it("shows reservation name", function() {
     const mocks = [
       {

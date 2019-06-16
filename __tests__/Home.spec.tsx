@@ -9,6 +9,8 @@ describe("Home", () => {
   it("renders and matches snapshot", () => {
     const wrapper = shallow(<List reservations={mockReservationList()} />);
 
+    console.log(wrapper.debug());
+
     expect(wrapper).toMatchSnapshot();
   });
 

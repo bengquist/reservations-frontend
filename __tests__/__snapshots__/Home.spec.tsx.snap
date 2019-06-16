@@ -1,3 +1,54 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Home renders and matches snapshot 1`] = `ShallowWrapper {}`;
+exports[`Home renders and matches snapshot 1`] = `
+<styled.div>
+  <Card
+    key="95b80559-4904-4151-b35d-80f073a30206"
+    reservation={
+      Object {
+        "arrivalDate": "06/09/2019",
+        "departureDate": "06/19/2019",
+        "hotelName": "Hilton Garden Inn",
+        "id": "95b80559-4904-4151-b35d-80f073a30206",
+        "name": "Blake",
+      }
+    }
+  />
+  <Card
+    key="4f972faf-3b27-482b-8b09-2f1cfd3de63d"
+    reservation={
+      Object {
+        "arrivalDate": "06/02/2019",
+        "departureDate": "06/10/2019",
+        "hotelName": "Homewood Suites",
+        "id": "4f972faf-3b27-482b-8b09-2f1cfd3de63d",
+        "name": "Ashlynn",
+      }
+    }
+  />
+  <Card
+    key="0393b32f-0a08-4927-b5a4-857eef2f40ec"
+    reservation={
+      Object {
+        "arrivalDate": "06/05/2019",
+        "departureDate": "06/14/2019",
+        "hotelName": "The Statler Dallas",
+        "id": "0393b32f-0a08-4927-b5a4-857eef2f40ec",
+        "name": "Tammy",
+      }
+    }
+  />
+  <Card
+    key="5d889b43-6a18-4584-8854-30924f255b2b"
+    reservation={
+      Object {
+        "arrivalDate": "06/11/2019",
+        "departureDate": "06/16/2019",
+        "hotelName": "Hampton Inn & Suites",
+        "id": "5d889b43-6a18-4584-8854-30924f255b2b",
+        "name": "Jessica",
+      }
+    }
+  />
+</styled.div>
+`;

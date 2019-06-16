@@ -1,3 +1,60 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Card renders and matches snapshot 1`] = `ShallowWrapper {}`;
+exports[`Card renders and matches snapshot 1`] = `
+<Fragment>
+  <button
+    css={
+      Array [
+        "
+  width: 100%;
+  background: white;
+  ",
+        "
+  transition: 0.2s;
+
+  :hover,
+  :active {
+    background-color: ",
+        [Function],
+        ";
+  }
+",
+        ";
+  ",
+        "
+  transition: 0.1s;
+
+  :focus {
+    background-color: ",
+        [Function],
+        ";
+    color: white;
+  }
+",
+        ";
+",
+      ]
+    }
+    onClick={[Function]}
+  >
+    <styled.div>
+      <span>
+        Blake
+      </span>
+      <span>
+        Hilton Garden Inn
+      </span>
+      <span
+        className="date"
+      >
+        Jun 9th, 2019
+      </span>
+      <span
+        className="date"
+      >
+        Jun 19th, 2019
+      </span>
+    </styled.div>
+  </button>
+</Fragment>
+`;

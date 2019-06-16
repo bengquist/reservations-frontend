@@ -74,11 +74,11 @@ const Create = () => {
             {message}
             <ButtonContainer>
               <Link href="/">
-                <Button type="button">
+                <Button type="button" css={secondaryStyles}>
                   {isSubmitted ? "Go Home" : "Cancel"}
                 </Button>
               </Link>
-              <Button type="submit" css={secondaryStyles}>
+              <Button type="submit" >
                 Submit
               </Button>
             </ButtonContainer>

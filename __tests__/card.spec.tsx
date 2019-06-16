@@ -4,15 +4,17 @@ import Card from "../components/reservation/Card";
 import { formatDate } from "../lib/formatHelpers";
 import { mockReservation } from "../lib/testUtil";
 
+const setup = () => shallow(<Card reservation={mockReservation()} />);
+
 describe("Card", () => {
   it("renders and matches snapshot", () => {
-    const wrapper = shallow(<Card reservation={mockReservation()} />);
+    const wrapper = setup();
 
     expect(wrapper).toMatchSnapshot();
   });
 
   it("shows reservation name", () => {
-    const wrapper = shallow(<Card reservation={mockReservation()} />);
+    const wrapper = setup();
 
     const span = wrapper.find("span").at(0);
 
@@ -20,7 +22,7 @@ describe("Card", () => {
   });
 
   it("shows hotel name", () => {
-    const wrapper = shallow(<Card reservation={mockReservation()} />);
+    const wrapper = setup();
 
     const span = wrapper.find("span").at(1);
 
@@ -28,7 +30,7 @@ describe("Card", () => {
   });
 
   it("shows arrival date", () => {
-    const wrapper = shallow(<Card reservation={mockReservation()} />);
+    const wrapper = setup();
 
     const span = wrapper.find("span").at(2);
 
@@ -38,7 +40,7 @@ describe("Card", () => {
   });
 
   it("shows departure date", () => {
-    const wrapper = shallow(<Card reservation={mockReservation()} />);
+    const wrapper = setup();
 
     const span = wrapper.find("span").at(3);
 
@@ -48,7 +50,7 @@ describe("Card", () => {
   });
 
   it("show modal on click", () => {
-    const wrapper = shallow(<Card reservation={mockReservation()} />);
+    const wrapper = setup();
 
     const button = wrapper.find("button");
 

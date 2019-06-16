@@ -1,0 +1,100 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Fields renders and matches snapshot 1`] = `
+<Fragment>
+  <Section
+    label="Reservation Name:"
+    placeholder="Blake"
+    setValue={[Function]}
+    value=""
+  />
+  <Section
+    label="Hotel:"
+    placeholder="Hampton Inn & Suites"
+    setValue={[Function]}
+    value=""
+  />
+  <styled.div>
+    <Section
+      label="Arrival Date:"
+      value={1560661200000}
+    >
+      <DatePicker
+        allowSameDay={false}
+        dateFormat="MM/dd/yyyy"
+        dateFormatCalendar="LLLL yyyy"
+        disabled={false}
+        disabledKeyboardNavigation={false}
+        dropdownMode="scroll"
+        inlineFocusSelectedMonth={false}
+        monthsShown={1}
+        nextMonthButtonLabel="Next month"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onClickOutside={[Function]}
+        onFocus={[Function]}
+        onInputClick={[Function]}
+        onInputError={[Function]}
+        onKeyDown={[Function]}
+        onMonthChange={[Function]}
+        onSelect={[Function]}
+        onYearChange={[Function]}
+        preventOpenOnFocus={false}
+        previousMonthButtonLabel="Previous Month"
+        readOnly={false}
+        renderDayContents={[Function]}
+        selected={2019-06-16T05:00:00.000Z}
+        shouldCloseOnSelect={true}
+        showMonthYearPicker={false}
+        showTimeInput={false}
+        showTimeSelect={false}
+        strictParsing={false}
+        timeCaption="Time"
+        timeInputLabel="Time"
+        timeIntervals={30}
+        withPortal={false}
+      />
+    </Section>
+    <Section
+      label="Departure Date:"
+      value={1560747600000}
+    >
+      <DatePicker
+        allowSameDay={false}
+        dateFormat="MM/dd/yyyy"
+        dateFormatCalendar="LLLL yyyy"
+        disabled={false}
+        disabledKeyboardNavigation={false}
+        dropdownMode="scroll"
+        inlineFocusSelectedMonth={false}
+        monthsShown={1}
+        nextMonthButtonLabel="Next month"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onClickOutside={[Function]}
+        onFocus={[Function]}
+        onInputClick={[Function]}
+        onInputError={[Function]}
+        onKeyDown={[Function]}
+        onMonthChange={[Function]}
+        onSelect={[Function]}
+        onYearChange={[Function]}
+        preventOpenOnFocus={false}
+        previousMonthButtonLabel="Previous Month"
+        readOnly={false}
+        renderDayContents={[Function]}
+        selected={2019-06-17T05:00:00.000Z}
+        shouldCloseOnSelect={true}
+        showMonthYearPicker={false}
+        showTimeInput={false}
+        showTimeSelect={false}
+        strictParsing={false}
+        timeCaption="Time"
+        timeInputLabel="Time"
+        timeIntervals={30}
+        withPortal={false}
+      />
+    </Section>
+  </styled.div>
+</Fragment>
+`;

@@ -1,21 +1,32 @@
 import * as React from "react";
-import { shallow } from "enzyme";
+import { shallow, mount } from "enzyme";
 import Fields from "../components/reservation/Fields";
+import { ThemeProvider } from "styled-components";
+import { theme } from "../components/styles/theme";
 
 const defaultValues = {
   name: "",
   hotelName: "",
-  arrivalDate: new Date(),
-  departureDate: new Date(),
+  arrivalDate: new Date("06-16-2019"),
+  departureDate: new Date("06-17-2019"),
   errorMessage: ""
 };
 
+const setup = () =>
+  shallow(<Fields values={defaultValues} onInput={jest.fn} />);
+
 describe("Fields", () => {
   it("renders and matches snapshot", () => {
-    const wrapper = shallow(
-      <Fields values={defaultValues} onInput={jest.fn} />
-    );
+    const wrapper = setup();
 
-    console.log(wrapper.debug());
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it("renders section inputs", () => {
+    const wrapper = setup();
+
+    const sections = wrapper.find("Section");
+
+    expect(sections.length).toEqual(4);
   });
 });

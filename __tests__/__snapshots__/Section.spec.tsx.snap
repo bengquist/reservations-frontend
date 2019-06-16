@@ -1,0 +1,162 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Section renders and matches snapshot 1`] = `
+<ThemeProvider
+  theme={
+    Object {
+      "colors": Object {
+        "accent": "#104C97",
+        "gray": "#E8E8E8",
+        "primary": "#DAF2FC",
+        "secondary": "#009CDE",
+        "white": "#fff",
+      },
+      "shadows": Object {
+        "soft": "0px 3px 6px rgba(0, 0, 0, 0.15)",
+      },
+    }
+  }
+>
+  <Section
+    label="Reservation Name:"
+    placeholder="Blake"
+    setValue={[Function]}
+    value=""
+  >
+    <styled.div>
+      <StyledComponent
+        forwardedComponent={
+          Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "attrs": Array [],
+            "componentStyle": ComponentStyle {
+              "componentId": "sc-bdVaJa",
+              "isStatic": false,
+              "lastClassName": "hJTOQZ",
+              "rules": Array [
+                "
+  display: grid;
+  grid-gap: 0.5rem;
+
+  .react-datepicker .react-datepicker__day-names {
+    margin-top: 1rem;
+  }
+
+  .react-datepicker .react-datepicker__header {
+    background: ",
+                [Function],
+                ";
+  }
+
+  .react-datepicker button {
+    box-shadow: none;
+  }
+
+  .react-datepicker__input-container {
+    display: flex;
+  }
+  .react-datepicker__input-container input {
+    ",
+                "
+  border-radius: 5px;
+  transition: 0.2s;
+  padding: 0.5rem;
+
+  :focus {
+    border: none;
+    box-shadow: 0 0 0 1pt ",
+                [Function],
+                ";
+  }
+",
+                ";
+    width: 100%;
+  }
+",
+              ],
+            },
+            "displayName": "styled.div",
+            "foldedComponentIds": Array [],
+            "render": [Function],
+            "styledComponentId": "sc-bdVaJa",
+            "target": "div",
+            "toString": [Function],
+            "warnTooManyClasses": [Function],
+            "withComponent": [Function],
+          }
+        }
+        forwardedRef={null}
+      >
+        <div
+          className="sc-bdVaJa hJTOQZ"
+        >
+          <styled.label
+            htmlFor="Reservation Name:"
+          >
+            <StyledComponent
+              forwardedComponent={
+                Object {
+                  "$$typeof": Symbol(react.forward_ref),
+                  "attrs": Array [],
+                  "componentStyle": ComponentStyle {
+                    "componentId": "sc-bwzfXH",
+                    "isStatic": true,
+                    "lastClassName": "uTxCW",
+                    "rules": Array [],
+                  },
+                  "displayName": "styled.label",
+                  "foldedComponentIds": Array [],
+                  "render": [Function],
+                  "styledComponentId": "sc-bwzfXH",
+                  "target": "label",
+                  "toString": [Function],
+                  "warnTooManyClasses": [Function],
+                  "withComponent": [Function],
+                }
+              }
+              forwardedRef={null}
+              htmlFor="Reservation Name:"
+            >
+              <label
+                className="sc-bwzfXH uTxCW"
+                htmlFor="Reservation Name:"
+              >
+                Reservation Name:
+              </label>
+            </StyledComponent>
+          </styled.label>
+          <Input
+            id="Reservation Name:"
+            onChange={[Function]}
+            placeholder="Blake"
+            value=""
+          >
+            <input
+              css={
+                Array [
+                  "
+  border-radius: 5px;
+  transition: 0.2s;
+  padding: 0.5rem;
+
+  :focus {
+    border: none;
+    box-shadow: 0 0 0 1pt ",
+                  [Function],
+                  ";
+  }
+",
+                ]
+              }
+              id="Reservation Name:"
+              onChange={[Function]}
+              placeholder="Blake"
+              value=""
+            />
+          </Input>
+        </div>
+      </StyledComponent>
+    </styled.div>
+  </Section>
+</ThemeProvider>
+`;

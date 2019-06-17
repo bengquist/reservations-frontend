@@ -36,12 +36,14 @@ const Fields: React.FunctionComponent<Props> = ({ onInput, values }) => {
       <DateContainer>
         <Section label="Arrival Date:" value={Number(arrivalDate)}>
           <DatePicker
+            data-test="arrival-date"
             selected={arrivalDate}
             onChange={(value: Date) => onInput({ arrivalDate: value })}
           />
         </Section>
         <Section label="Departure Date:" value={Number(departureDate)}>
           <DatePicker
+            data-test="departure-date"
             selected={departureDate}
             onChange={(value: Date) => onInput({ departureDate: value })}
           />

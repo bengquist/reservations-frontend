@@ -1,35 +1,42 @@
 import * as React from "react";
-import { mount, shallow } from "enzyme";
+import { mount } from "enzyme";
 import { mockReservation } from "../lib/testUtil";
 import Detail from "../components/reservation/Detail";
 import { RESERVATION_QUERY } from "../components/reservation/query";
 import { MockedProvider } from "react-apollo/test-utils";
+import { theme } from "../components/styles/theme";
+import { ThemeProvider } from "styled-components";
+import wait from "waait";
+
+const mocks = [
+  {
+    request: {
+      query: RESERVATION_QUERY,
+      vaiable: { id: mockReservation().id }
+    },
+    result: {
+      data: {
+        reservation: {
+          ...mockReservation()
+        }
+      }
+    }
+  }
+];
+
+const setup = () =>
+  mount(
+    <MockedProvider mocks={mocks}>
+      <ThemeProvider theme={theme}>
+        <Detail id={mockReservation().id} />
+      </ThemeProvider>
+    </MockedProvider>
+  );
 
 describe("Detail", () => {
   it("renders and matches snapshot", () => {
-    const wrapper = shallow(<Detail id={mockReservation().id} />);
+    const wrapper = setup();
 
     expect(wrapper).toMatchSnapshot();
-  });
-
-  it("shows reservation name", function() {
-    const mocks = [
-      {
-        request: {
-          query: RESERVATION_QUERY
-        },
-        result: {
-          data: {
-            reservation: mockReservation()
-          }
-        }
-      }
-    ];
-
-    const wrapper = mount(
-      <MockedProvider mocks={mocks}>
-        <Detail id={mockReservation().id} />
-      </MockedProvider>
-    );
   });
 });

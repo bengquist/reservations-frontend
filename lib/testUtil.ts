@@ -6,7 +6,7 @@ const mockReservation = () => ({
   arrivalDate: "06/09/2019",
   departureDate: "06/19/2019",
   hotelName: "Hilton Garden Inn",
-  id: casual.uuid,
+  id: "j1h23489ydsa9sf8ha",
   name: "Blake"
 });
 

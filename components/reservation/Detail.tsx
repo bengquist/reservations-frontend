@@ -27,7 +27,7 @@ const Detail: React.FunctionComponent<Props> = ({ id }) => {
         } = data.reservation;
 
         return (
-          <Container>
+          <Container data-test="detail">
             <h1>Reservation</h1>
             <div className="info">
               <p>

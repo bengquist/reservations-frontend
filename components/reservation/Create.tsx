@@ -62,7 +62,7 @@ const Create = () => {
         );
 
         return (
-          <Form onSubmit={preventDefault(submitHandler)}>
+          <Form data-test="form" onSubmit={preventDefault(submitHandler)}>
             <Fields
               values={inputValues}
               onInput={(value: any) =>
@@ -74,7 +74,7 @@ const Create = () => {
             {message}
             <ButtonContainer>
               <Link href="/">
-                <Button type="button" css={secondaryStyles}>
+                <Button data-id="cancel" type="button" css={secondaryStyles}>
                   {isSubmitted ? "Go Home" : "Cancel"}
                 </Button>
               </Link>

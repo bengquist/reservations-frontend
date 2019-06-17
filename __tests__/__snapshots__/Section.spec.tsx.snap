@@ -129,6 +129,7 @@ exports[`Section renders and matches snapshot 1`] = `
             id="Reservation Name:"
             onChange={[Function]}
             placeholder="Blake"
+            required={true}
             value=""
           >
             <input
@@ -151,6 +152,7 @@ exports[`Section renders and matches snapshot 1`] = `
               id="Reservation Name:"
               onChange={[Function]}
               placeholder="Blake"
+              required={true}
               value=""
             />
           </Input>

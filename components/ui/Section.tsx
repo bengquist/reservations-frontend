@@ -23,6 +23,7 @@ const Section: React.FunctionComponent<Props> = ({
       <Label htmlFor={label}>{label}</Label>
       {children || (
         <Input
+          required
           id={label}
           placeholder={placeholder}
           value={value}
